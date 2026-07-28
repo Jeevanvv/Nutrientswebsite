@@ -1,0 +1,100 @@
+/* =============================================================================
+   footer.css — NutriNest Site Footer
+   ============================================================================= */
+
+/* ---- Footer shell -------------------------------------------------------- */
+.site-footer {
+  background: var(--dark-green);
+  color: rgba(255, 249, 239, .8);
+  padding-block: var(--s8) var(--s5);
+}
+
+/* ---- Four-column grid ---------------------------------------------------- */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+  gap: 48px 40px;
+}
+
+/* ---- Column headings ----------------------------------------------------- */
+.site-footer h4 {
+  color: var(--white);
+  font-size: .82rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+/* ---- Link lists ---------------------------------------------------------- */
+.site-footer ul {
+  list-style: none;
+  margin: 0; padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.site-footer a {
+  color: rgba(255, 249, 239, .82);
+  text-decoration: none;
+  font-size: .92rem;
+}
+.site-footer a:hover {
+  color: var(--golden-yellow);
+  text-decoration: underline;
+}
+
+/* ---- Contact block ------------------------------------------------------- */
+.footer-contact { display: grid; gap: var(--s2); font-size: .92rem; }
+.footer-contact span {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: .7rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--golden-yellow);
+  margin-bottom: 4px;
+}
+
+/* ---- Social icons -------------------------------------------------------- */
+.footer-social { display: flex; gap: 10px; }
+.footer-social a {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--line-dark);
+  display: grid; place-items: center;
+  color: rgba(255, 249, 239, .85);
+  text-decoration: none;
+}
+.footer-social a:hover {
+  background: var(--golden-yellow);
+  color: var(--dark-green);
+  border-color: var(--golden-yellow);
+  text-decoration: none;
+}
+.footer-social svg { width: 18px; height: 18px; }
+
+/* ---- Bottom bar ---------------------------------------------------------- */
+.footer-bottom {
+  margin-top: var(--s7);
+  padding-top: var(--s3);
+  border-top: 1px solid var(--line-dark);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2) var(--s4);
+  justify-content: space-between;
+  font-size: .84rem;
+}
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2) var(--s3);
+}
+.footer-bottom p { margin: 0; }
+
+/* ---- Responsive ---------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 860px) {
+  .footer-grid { grid-template-columns: 1fr; }
+}

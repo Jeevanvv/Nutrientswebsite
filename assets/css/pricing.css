@@ -1,0 +1,98 @@
+/* =============================================================================
+   pricing.css — NutriNest Pricing Cards
+   ============================================================================= */
+
+/* ---- Pricing grid -------------------------------------------------------- */
+.price-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* ---- Individual pricing card -------------------------------------------- */
+.price {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 34px 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.price:hover { transform: translateY(-5px); box-shadow: var(--shadow-lift); }
+
+/* ---- Featured (dark) variant -------------------------------------------- */
+.price--featured {
+  background: var(--dark-green);
+  border-color: var(--dark-green);
+  color: var(--ivory-soft);
+}
+.price--featured h3,
+.price--featured .price__amount { color: var(--white); }
+.price--featured .price__list li { color: rgba(255, 249, 239, .9); }
+
+/* ---- Flag badge (e.g. "Most popular") ------------------------------------ */
+.price__flag {
+  position: absolute;
+  top: -14px; left: var(--s4);
+  background: var(--golden-yellow);
+  color: var(--dark-green);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+}
+
+/* ---- Price amount -------------------------------------------------------- */
+.price__amount {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2.6rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  margin: var(--s2) 0 4px;
+  color: var(--dark-green);
+}
+
+/* ---- Meta line (e.g. "per month") --------------------------------------- */
+.price__meta { font-size: .88rem; color: var(--ink-muted); margin-bottom: var(--s3); }
+.price--featured .price__meta { color: rgba(255, 249, 239, .75); }
+
+/* ---- Feature list -------------------------------------------------------- */
+.price__list {
+  list-style: none;
+  margin: 0 0 var(--s4);
+  padding: 0;
+  display: grid;
+  gap: 11px;
+  flex: 1;
+}
+.price__list li {
+  display: flex;
+  gap: 10px;
+  font-size: .93rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  align-items: flex-start;
+}
+.price__list li::before {
+  content: "";
+  flex: none;
+  margin-top: 7px;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--leaf-green);
+}
+
+/* CTA button pushed to bottom */
+.price .btn { width: 100%; margin-top: auto; }
+
+/* ---- Responsive ---------------------------------------------------------- */
+@media (max-width: 640px) {
+  .price-cards { grid-template-columns: 1fr; }
+}

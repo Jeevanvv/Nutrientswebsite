@@ -1,0 +1,13 @@
+/* =============================================================================
+   pages/program.css — Individual Program Page Specific Styles
+   Import on all src/programs/*.html pages.
+   ============================================================================= */
+
+/* Programme hero is always centred */
+.page-program .hero--center .hero__inner { text-align: center; }
+
+/* Narrow FAQ container */
+.page-program .narrow { max-width: 860px; margin-inline: auto; }
+
+/* Lead magnet / resource download section split */
+.page-program .split + .split { margin-top: var(--s6); }

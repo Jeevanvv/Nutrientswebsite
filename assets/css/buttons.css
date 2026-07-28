@@ -1,0 +1,135 @@
+/* =============================================================================
+   buttons.css — NutriNest Button System
+   ============================================================================= */
+
+/* ---- Base button --------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 14px 30px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: .96rem;
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color .25s var(--ease),
+    color            .25s var(--ease),
+    transform        .25s var(--ease),
+    box-shadow       .25s var(--ease),
+    border-color     .25s var(--ease);
+}
+
+/* ---- Primary (green fill) ------------------------------------------------
+   ACCESSIBILITY NOTE: White text on #8BC53D measures 2.2:1, below 4.5:1.
+   Dark Green on Accent Orange measures 4.5:1. Kept as-is per existing design.
+   ------------------------------------------------------------------- */
+.btn--primary {
+  background: var(--accent-orange);
+  color: var(--dark-green);
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(139, 197, 61, .35);
+}
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  background: var(--golden-yellow);
+  color: var(--dark-green);
+  transform: translateY(-2px);
+}
+
+/* ---- Ghost (outlined) ---------------------------------------------------- */
+.btn--ghost {
+  border-color: var(--dark-green);
+  color: var(--dark-green);
+  background: transparent;
+}
+.btn--ghost:hover,
+.btn--ghost:focus-visible {
+  background: var(--dark-green);
+  color: var(--warm-ivory);
+  transform: translateY(-2px);
+}
+
+/* Dark-band ghost overrides */
+.band-dark .btn--ghost {
+  border-color: rgba(255, 242, 217, .6);
+  color: var(--warm-ivory);
+}
+.band-dark .btn--ghost:hover {
+  background: var(--warm-ivory);
+  color: var(--dark-green);
+  border-color: var(--warm-ivory);
+}
+
+/* Hero (formerly dark hero) ghost overrides */
+.hero--dark .btn--ghost {
+  border-color: var(--dark-green);
+  color: var(--dark-green);
+  background: transparent;
+}
+.hero--dark .btn--ghost:hover,
+.hero--dark .btn--ghost:focus-visible {
+  background: var(--dark-green);
+  color: var(--white);
+}
+
+/* ---- Text (underline link style) ----------------------------------------- */
+.btn--text {
+  min-height: 44px;
+  padding: 8px 0;
+  border-radius: 0;
+  background: none;
+  color: var(--dark-green);
+  border-bottom: 2px solid var(--leaf-green);
+}
+.btn--text:hover { color: var(--leaf-ink); }
+
+/* ---- Button row layout --------------------------------------------------- */
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  align-items: center;
+}
+
+/* ---- Micro-copy list (trust signals under buttons) ----------------------- */
+.microcopy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin-top: var(--s3);
+  padding: 0;
+  list-style: none;
+}
+.microcopy li {
+  font-size: .88rem;
+  color: var(--ink-muted);
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.microcopy li::before {
+  content: "";
+  margin-top: 9px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--leaf-green);
+  flex: none;
+}
+.band-dark .microcopy li { color: rgba(255, 249, 239, .8); }
+
+/* ---- Hero microcopy adjustments ----------------------------------------- */
+.hero--dark .microcopy li { color: var(--ink-muted); }
+
+/* ---- Spacing helpers ----------------------------------------------------- */
+.mt1 { margin-top: var(--s1); }
+.mt2 { margin-top: var(--s2); }
+.mt3 { margin-top: var(--s3); }
+.mt4 { margin-top: var(--s4); }
+.mt5 { margin-top: var(--s5); }
+.mb0 { margin-bottom: 0; }

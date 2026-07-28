@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Style Guide | NutriNest Design System</title>
+  <meta name="description" content="NutriNest with Megha — Personalised Nutrition & Lifestyle Transformation.">
+  <meta name="theme-color" content="#8BC53D">
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMzAiIGZpbGw9IiM4QkM1M0QiLz48cGF0aCBkPSJNNDQgMThjMCAxNC04IDIzLTE5IDI0IDAtMTMgNy0yMiAxOS0yNHoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- CSS: base system -->
+  <link rel="stylesheet" href="/assets/css/variables.css?v=1.7">
+  <link rel="stylesheet" href="/assets/css/reset.css?v=1.7">
+  <link rel="stylesheet" href="/assets/css/typography.css?v=1.7">
+  <link rel="stylesheet" href="/assets/css/layout.css?v=1.7">
+  <link rel="stylesheet" href="/assets/css/buttons.css?v=1.7">
+  <link rel="stylesheet" href="/assets/css/cards.css?v=1.7">
+  <link rel="stylesheet" href="/assets/css/navigation.css?v=1.7">
+  <link rel="stylesheet" href="/assets/css/hero.css?v=1.7">
+  <link rel="stylesheet" href="/assets/css/forms.css?v=1.7">
+  <link rel="stylesheet" href="/assets/css/accordion.css?v=1.7">
+  <link rel="stylesheet" href="/assets/css/tabs.css?v=1.7">
+  <link rel="stylesheet" href="/assets/css/carousel.css?v=1.7">
+  <link rel="stylesheet" href="/assets/css/pricing.css?v=1.7">
+  <link rel="stylesheet" href="/assets/css/footer.css?v=1.7">
+  <link rel="stylesheet" href="/assets/css/utilities.css?v=1.7">
+  <link rel="stylesheet" href="/assets/css/animations.css?v=1.7">
+    <script>document.documentElement.className += ' js';</script>
+</head>
+<body class="page-styleguide">
+
+<!-- INCLUDE:header -->
+
+<main id="main">
+<section class="hero">
+  <div class="hero__pattern" aria-hidden="true"></div>
+  <div class="wrap hero__inner">
+    <p class="eyebrow">For the build team</p>
+    <h1>Style guide</h1>
+    <p class="lead">Every token and component used on this site, in one place. Part 2 of the brief is the source of truth; anything below that departs from it is marked.</p>
+  </div>
+</section><section class="section band-white">
+<div class="wrap">
+<div class="section-head reveal"><p class="eyebrow">Colour</p><h2>Palette and where each colour is allowed</h2></div><div class="grid g3"><article class="card reveal"><div style="height:96px;border-radius:14px;background:#2E4213;border:1px solid var(--line)"></div><h3 class="mt3">Dark Green</h3><p class="mono">#2E4213</p><p>Headings, authority surfaces, footers, corporate pages</p></article><article class="card reveal"><div style="height:96px;border-radius:14px;background:#8BC53D;border:1px solid var(--line)"></div><h3 class="mt3">Leaf Green</h3><p class="mono">#8BC53D</p><p>Accents, confirmation states, data highlights, eyebrow rules</p></article><article class="card reveal"><div style="height:96px;border-radius:14px;background:#8BC53D;border:1px solid var(--line)"></div><h3 class="mt3">Primary Green</h3><p class="mono">#8BC53D</p><p>Primary CTAs only — its scarcity is what makes it work</p></article><article class="card reveal"><div style="height:96px;border-radius:14px;background:#A9D967;border:1px solid var(--line)"></div><h3 class="mt3">Light Green</h3><p class="mono">#A9D967</p><p>Highlights, calendars, child and membership pages</p></article><article class="card reveal"><div style="height:96px;border-radius:14px;background:#F5FAEC;border:1px solid var(--line)"></div><h3 class="mt3">Soft Green Tint</h3><p class="mono">#F5FAEC</p><p>Page ground, call-out boxes, warmth</p></article><article class="card reveal"><div style="height:96px;border-radius:14px;background:#55771A;border:1px solid var(--line)"></div><h3 class="mt3">Leaf Ink</h3><p class="mono">#55771A</p><p>Text-weight leaf. Added because #8BC53D fails contrast as text</p></article></div><div class="callout mt5 reveal"><h3>Two rules that matter more than the rest</h3><p>Primary Green at full strength appears on primary calls to action and nowhere else. The moment it decorates something, every CTA on the site gets weaker.</p><p class="mb0">Leaf Green at full strength fails contrast as text on light grounds. It stays on rules, dark-ground eyebrows and data accents; text-weight leaf uses Leaf Ink.</p></div>
+</div>
+</section>
+<section class="section band-ivory">
+<div class="wrap">
+<div class="section-head reveal"><p class="eyebrow">Typography</p><h2>Poppins everywhere — weight does the hierarchy work</h2></div><div class="card reveal"><p style="font-family:var(--font-display);font-weight:800;font-size:clamp(2.5rem,6.4vw,4.6rem);line-height:1.08;letter-spacing:-.02em;color:var(--dark-green);margin-bottom:8px">Heading one</p><p class="mono mb0">Poppins 800 · clamp(2.5rem, 6.4vw, 4.6rem) · line-height 1.08 · letter-spacing −0.02em</p></div><div class="card reveal mt3"><h2 style="margin-bottom:8px">Heading two</h2><p class="mono mb0">Poppins 800 · clamp(1.9rem, 4vw, 2.9rem) · line-height 1.1</p></div><div class="card reveal mt3"><h3 style="margin-bottom:8px">Card title</h3><p class="mono mb0">Poppins 600 · 1.3rem</p></div><div class="card reveal mt3"><p class="eyebrow">Eyebrow</p><p class="mono mb0">Poppins 600 · 0.74rem · uppercase · letter-spacing 0.22em · Leaf Ink with a 26px rule</p></div><div class="card reveal mt3"><p>Body copy. Poppins 300–400 at 16–18px, line-height 1.6, held to a maximum of 68 characters per line so nobody has to track back across a wide screen to find the start of the next sentence.</p><p class="mono mb0">Poppins 300 · 17px · line-height 1.6 · max 68ch</p></div><div class="card reveal mt3"><p class="num" style="font-size:2rem;margin:0">₹18,000 · 24 calls · 10+ countries</p><p class="mono mb0">Poppins 700, tabular figures, everywhere numbers sit in a row</p></div>
+</div>
+</section>
+<section class="section band-white">
+<div class="wrap">
+<div class="section-head reveal"><p class="eyebrow">Components</p><h2>Built and in use across the site</h2></div><div class="grid g2"><div><h3>Buttons</h3><div class="btn-row"><a class="btn btn--primary" href="#0">Book your consultation</a><a class="btn btn--ghost" href="#0">See how it works</a><a class="btn btn--text" href="#0">Download the guide</a></div><h3 class="mt5">Chips</h3><ul class="chips"><li class="chip">PCOS</li><li class="chip">Diabetic-friendly</li><li class="chip">Under 15 min</li></ul><h3 class="mt5">Call-out</h3><div class="callout"><h3>Weekly consultations</h3><p class="mb0">Used for the one idea a section must not lose.</p></div><div class="callout callout--strong mt3"><h3>Strong call-out</h3><p class="mb0">Reserved for positions and safeguards, not for emphasis.</p></div></div><div><h3>Steps</h3><div class="steps"><article class="step reveal"><div class="step__num">01</div><div><h3>Assessment</h3><p>Numbered because the order carries meaning. Never numbered for decoration.</p></div></article><article class="step reveal"><div class="step__num">02</div><div><h3>Consultation</h3><p>Collapses to a single column below 560px.</p></div></article></div><h3 class="mt5">Image slot</h3><figure class="shot reveal" role="img" aria-label="Every image slot on this site carries the shot required from Section 10 of the brief."><figcaption class="shot__label"><b>Image slot</b>Every image slot on this site carries the shot required from Section 10 of the brief.</figcaption></figure></div></div>
+</div>
+</section>
+<section class="section band-ivory">
+<div class="wrap">
+<div class="section-head reveal"><p class="eyebrow">Accessibility, as built</p><h2>The floor, applied sitewide</h2></div><div class="table-wrap reveal"><table class="tbl"><thead><tr><th scope="col">Requirement</th><th scope="col">How it is met here</th></tr></thead><tbody><tr><td>Text contrast</td><td>Body and UI text pass 4.5:1. The one deviation — white on Accent Orange — was resolved in favour of contrast and is flagged in the stylesheet</td></tr><tr><td>Type size</td><td>17px body sitewide, 17.5px on Community, Child, Special Needs, Women’s Health and Preventive Care</td></tr><tr><td>Keyboard</td><td>Every control reachable and operable, with a visible focus ring. Tabs support arrow keys</td></tr><tr><td>Motion</td><td>prefers-reduced-motion respected everywhere. Special Needs ships with motion off by default, not as a fallback</td></tr><tr><td>Colour independence</td><td>No state is signalled by colour alone — pressed chips, open accordions and comparison tables all carry text or an icon</td></tr><tr><td>Tap targets</td><td>48px minimum on every interactive element</td></tr><tr><td>Images</td><td>Slots carry descriptive alt text drawn from the shot list. No text baked into images</td></tr><tr><td>Forms</td><td>Visible labels, never placeholder-only. Errors and confirmations announced through a live region</td></tr><tr><td>No JavaScript</td><td>Content is fully readable. Reveal animations are opt-in via a js class on the html element</td></tr></tbody></table></div>
+</div>
+</section>
+<section class="section band-dark cta-band"><div class="cta-band__pattern" aria-hidden="true"></div><div class="wrap"><h2 class="reveal">That is the system</h2><div class="btn-row reveal mt4"><a class="btn btn--primary" href="/index.html">Back to the site</a><a class="btn btn--ghost" href="/programs/index.html">See all programs</a></div></div></section>
+</main>
+
+<!-- INCLUDE:footer -->
+
+</body>
+</html>

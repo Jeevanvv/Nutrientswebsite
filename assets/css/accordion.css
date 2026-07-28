@@ -1,0 +1,64 @@
+/* =============================================================================
+   accordion.css — NutriNest FAQ Accordion
+   ============================================================================= */
+
+.accordion { border-top: 1px solid var(--line); }
+.acc-item   { border-bottom: 1px solid var(--line); }
+
+.acc-btn {
+  width: 100%;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+  padding: 22px 8px;
+  min-height: 48px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: var(--dark-green);
+  border-radius: var(--radius-sm);
+  transition: background-color .18s var(--ease);
+}
+.acc-btn:hover {
+  color: var(--leaf-ink);
+  background: rgba(139, 197, 61, .06);
+}
+
+/* Plus / minus icon */
+.acc-btn__icon {
+  flex: none;
+  width: 26px; height: 26px;
+  position: relative;
+  margin-top: 2px;
+}
+.acc-btn__icon::before,
+.acc-btn__icon::after {
+  content: "";
+  position: absolute;
+  background: var(--accent-orange);
+  border-radius: 2px;
+  transition: transform .3s var(--ease), opacity .3s var(--ease);
+}
+.acc-btn__icon::before { top: 12px; left: 3px;  width: 20px; height: 2px; }
+.acc-btn__icon::after  { top:  3px; left: 12px; width: 2px;  height: 20px; }
+
+/* Collapse the vertical bar when expanded */
+.acc-btn[aria-expanded="true"] .acc-btn__icon::after {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+/* Panel */
+.acc-panel { display: none; padding: 2px 48px 26px 8px; }
+.acc-panel[data-open] { display: block; }
+.acc-panel p {
+  color: var(--ink-soft);
+  margin-bottom: 0;
+  max-width: 62ch;
+  line-height: 1.7;
+}

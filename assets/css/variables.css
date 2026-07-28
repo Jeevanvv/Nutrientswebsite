@@ -1,0 +1,62 @@
+/* =============================================================================
+   variables.css — NutriNest Design Tokens
+   All CSS custom properties for the entire site.
+   Import this FIRST in every page's <head>.
+   ============================================================================= */
+
+:root {
+  /* ---- Core palette -------------------------------------------------------- */
+  --dark-green:     #2E4213;
+  --leaf-green:     #8BC53D;
+  --accent-orange:  #8BC53D;   /* kept identical to leaf-green per design brief */
+  --golden-yellow:  #A9D967;
+  --warm-ivory:     #F5FAEC;
+  --white:          #FFFFFF;
+
+  /* ---- Tints & shades (20–100% scale) -------------------------------------- */
+  --dark-green-90:  #3A531B;
+  --dark-green-70:  #587A31;
+  --dark-green-40:  #9DB884;
+  --dark-green-20:  #D3E2C4;
+  --leaf-40:        #D1E9A9;
+  --leaf-20:        #EDF7DC;
+  --ivory-deep:     #E4F0CF;
+  --ivory-soft:     #FAFDF4;
+  --orange-tint:    #E8F5D2;
+
+  /* ---- Text tokens
+     Leaf green (#8BC53D) fails 4.5:1 on light grounds, so running text uses
+     --leaf-ink; the pure hue is reserved for decorative rules and dark-ground
+     eyebrows only. ---------------------------------------------------------- */
+  --ink:            #1E2A14;
+  --ink-soft:       #4C5A41;
+  --ink-muted:      #5B6950;
+  --leaf-ink:       #55771A;
+  --line:           #E4EBD9;
+  --line-dark:      rgba(255, 255, 255, 0.20);
+
+  /* ---- Layout -------------------------------------------------------------- */
+  --maxw:           1180px;
+  --gutter:         24px;
+  --radius-lg:      30px;
+  --radius:         24px;
+  --radius-sm:      14px;
+  --radius-pill:    999px;
+
+  /* ---- 8px base spacing scale ---------------------------------------------- */
+  --s1:  8px;   --s2:  16px;  --s3:  24px;  --s4:  32px;
+  --s5:  40px;  --s6:  48px;  --s7:  64px;  --s8:  80px;  --s9:  96px;
+
+  /* ---- Shadows ------------------------------------------------------------- */
+  --shadow-sm:   0 2px  10px rgba(46, 66, 19, .06);
+  --shadow:      0 10px 30px rgba(46, 66, 19, .09);
+  --shadow-lift: 0 18px 40px rgba(46, 66, 19, .16);
+
+  /* ---- Typography ---------------------------------------------------------- */
+  --font-display: "Poppins", "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-body:    "Poppins", "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono:    "Poppins", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ---- Motion -------------------------------------------------------------- */
+  --ease: cubic-bezier(.22, .61, .36, 1);
+}

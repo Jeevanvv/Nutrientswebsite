@@ -1,0 +1,76 @@
+/* =============================================================================
+   forms.css — NutriNest Form Styles
+   ============================================================================= */
+
+/* ---- Form wrapper -------------------------------------------------------- */
+.form { display: grid; gap: 20px; }
+
+/* ---- Two-column row ------------------------------------------------------ */
+.form__row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* ---- Field (label + control) --------------------------------------------- */
+.field { display: grid; gap: 8px; }
+
+.field label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: .85rem;
+  color: var(--dark-green);
+  letter-spacing: .04em;
+}
+.band-dark .field label { color: var(--golden-yellow); }
+
+.field input,
+.field select,
+.field textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--ink);
+  padding: 14px 18px;
+  min-height: 54px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--dark-green-20);
+  background: var(--white);
+  line-height: 1.5;
+  width: 100%;
+}
+.field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible { outline-offset: 1px; }
+
+.field .hint {
+  font-size: .82rem;
+  color: var(--ink-muted);
+}
+
+/* ---- Form note / legal line ---------------------------------------------- */
+.form-note {
+  font-size: .84rem;
+  color: var(--ink-muted);
+}
+.band-dark .form-note { color: rgba(255, 249, 239, .7); }
+
+/* ---- Visually hidden (for aria-labelledby headings) ---------------------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---- Responsive ---------------------------------------------------------- */
+@media (max-width: 600px) {
+  .form__row { grid-template-columns: 1fr; gap: 16px; }
+}

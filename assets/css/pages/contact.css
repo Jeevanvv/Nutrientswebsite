@@ -1,0 +1,28 @@
+/* =============================================================================
+   pages/contact.css — Contact Page Specific Styles
+   ============================================================================= */
+
+/* Wider form container on contact page */
+.page-contact .form-wrap {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+/* Contact info sidebar */
+.contact-sidebar {
+  display: grid;
+  gap: var(--s4);
+}
+.contact-detail {
+  display: grid;
+  gap: 6px;
+}
+.contact-detail dt {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: .75rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--leaf-ink);
+}
+.contact-detail dd { margin: 0; font-size: .96rem; }

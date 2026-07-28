@@ -1,0 +1,30 @@
+/* =============================================================================
+   pages/home.css — Home Page Specific Styles
+   Import in addition to the base CSS bundle on index.html only.
+   ============================================================================= */
+
+/* Home hero: left-aligned layout (not centred) */
+.hero--split .hero__inner {
+  max-width: 760px;
+  text-align: left;
+}
+.hero--split .btn-row { justify-content: flex-start; }
+.hero--split .microcopy { justify-content: flex-start; }
+
+/* Recipe card (home tease section) */
+.recipe-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.recipe {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.recipe:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.recipe__body { display: flex; flex-direction: column; flex: 1; padding: var(--s3); }
+.recipe__body p { font-size: .9rem; color: var(--ink-soft); }
+
+@media (max-width: 720px) {
+  .recipe-grid { grid-template-columns: 1fr; }
+}

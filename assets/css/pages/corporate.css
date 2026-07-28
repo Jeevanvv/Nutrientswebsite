@@ -1,0 +1,14 @@
+/* =============================================================================
+   pages/corporate.css — Corporate / Institution Pages Specific Styles
+   Import on corporate-wellness.html and institution-wellness.html.
+   ============================================================================= */
+
+/* Eight-step flow used on corporate pages */
+.flow.flow--corporate { gap: 10px; }
+
+/* Case snapshot grid */
+.case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s3); }
+@media (max-width: 720px) { .case-grid { grid-template-columns: 1fr; } }
+
+/* Industries chip list override — wrapped, not scrollable */
+.industries-chips { flex-wrap: wrap; }
