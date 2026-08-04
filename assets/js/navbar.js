@@ -1,11 +1,12 @@
 /**
- * navbar.js — NutriNest Navigation & Mobile Sidebar Drawer
+ * navbar.js — NutriNest Navigation, Mobile Sidebar Drawer & Bottom Tab Bar
  *
  * Handles:
- *  - Mobile sidebar drawer open/close (#nav-toggle, #drawer-close, #drawer-backdrop)
+ *  - Mobile sidebar drawer toggle (#nav-toggle, #drawer-close, #drawer-backdrop)
+ *  - Body class toggle (.drawer-open) to fix stacking context for backdrop
  *  - Programs dropdown accordion (.nav__btn)
- *  - Outside-click & Escape key dismissal
  *  - Lock body scroll when mobile drawer is open
+ *  - Active tab highlighting on bottom navigation bar
  */
 
 import { qs, qsa, on } from './utils.js';
@@ -15,14 +16,15 @@ export function initNavbar() {
   const nav      = qs('#site-nav');
   const backdrop = qs('#drawer-backdrop');
   const closeBtn = qs('#drawer-close');
-  if (!nav) return;
 
-  const iconMenu  = qs('.icon-menu', toggle);
-  const iconClose = qs('.icon-close', toggle);
+  const iconMenu  = toggle ? qs('.icon-menu', toggle) : null;
+  const iconClose = toggle ? qs('.icon-close', toggle) : null;
 
   /* ---- Open Drawer -------------------------------------------------------- */
   function openDrawer() {
+    if (!nav) return;
     nav.classList.add('is-open');
+    document.body.classList.add('drawer-open');
     if (backdrop) backdrop.classList.add('is-open');
     if (toggle) {
       toggle.setAttribute('aria-expanded', 'true');
@@ -35,7 +37,9 @@ export function initNavbar() {
 
   /* ---- Close Drawer ------------------------------------------------------- */
   function closeDrawer() {
+    if (!nav) return;
     nav.classList.remove('is-open');
+    document.body.classList.remove('drawer-open');
     if (backdrop) backdrop.classList.remove('is-open');
     if (toggle) {
       toggle.setAttribute('aria-expanded', 'false');
@@ -48,7 +52,7 @@ export function initNavbar() {
   }
 
   /* ---- Toggle drawer via hamburger button --------------------------------- */
-  if (toggle) {
+  if (toggle && nav) {
     on(toggle, 'click', (e) => {
       e.stopPropagation();
       const isOpen = nav.classList.contains('is-open');
@@ -77,7 +81,6 @@ export function initNavbar() {
       e.stopPropagation();
       const isOpen = btn.getAttribute('aria-expanded') === 'true';
       
-      // On desktop, close sibling menus first
       if (window.innerWidth > 860) {
         closeAllMenus();
       }
@@ -99,26 +102,27 @@ export function initNavbar() {
     }
   });
 
-  /* ---- Close drawer & menus on link click inside drawer ------------------- */
-  qsa('a', nav).forEach(link => {
-    on(link, 'click', () => {
-      if (window.innerWidth <= 860) {
-        closeDrawer();
-      }
+  /* ---- Close drawer on link click inside drawer ------------------- */
+  if (nav) {
+    qsa('a', nav).forEach(link => {
+      on(link, 'click', () => {
+        if (window.innerWidth <= 860) {
+          closeDrawer();
+        }
+      });
     });
-  });
+  }
 
   /* ---- Escape key closes drawer and dropdowns ---------------------------- */
   on(document, 'keydown', (e) => {
     if (e.key === 'Escape') {
       closeAllMenus();
-      if (nav.classList.contains('is-open')) {
+      if (nav && nav.classList.contains('is-open')) {
         closeDrawer();
       }
     }
   });
 
-  /* ---- Helpers ------------------------------------------------------------ */
   function closeAllMenus() {
     qsa('.nav__btn').forEach(btn => {
       btn.setAttribute('aria-expanded', 'false');
@@ -126,5 +130,52 @@ export function initNavbar() {
       const menu   = qs(`#${menuId}`);
       if (menu) menu.setAttribute('hidden', '');
     });
+  }
+
+  /* ---- Bottom Tab Bar Active Highlighting ------------------------------- */
+  setActiveTab(window.location.pathname);
+}
+
+function setActiveTab(path) {
+  const tabs = qsa('.tab-item');
+  if (!tabs.length) return;
+
+  const normPath = (path === '/index.html' || path === '/') ? '/' : path;
+  let matched = false;
+
+  tabs.forEach(tab => {
+    const matchVal = tab.dataset.tabMatch || '';
+    tab.removeAttribute('aria-current');
+
+    if (matched) return;
+    if (matchVal.startsWith('__')) return;
+
+    if (matchVal === '/') {
+      if (normPath === '/') {
+        tab.setAttribute('aria-current', 'page');
+        matched = true;
+      }
+    } else if (normPath === matchVal || normPath.startsWith(matchVal)) {
+      tab.setAttribute('aria-current', 'page');
+      matched = true;
+    }
+  });
+
+  if (!matched || window.location.hash === '#corporates') {
+    const corporatesTab = qs('#tab-corporates');
+    if (corporatesTab && window.location.hash === '#corporates') {
+      tabs.forEach(t => t.removeAttribute('aria-current'));
+      corporatesTab.setAttribute('aria-current', 'page');
+    }
+  }
+
+  const individualsTab = qs('#tab-individuals');
+  if (
+    individualsTab &&
+    normPath.startsWith('/programs/') &&
+    window.location.hash === '#individuals'
+  ) {
+    tabs.forEach(t => t.removeAttribute('aria-current'));
+    individualsTab.setAttribute('aria-current', 'page');
   }
 }

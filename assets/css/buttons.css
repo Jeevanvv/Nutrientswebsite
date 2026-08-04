@@ -1,5 +1,5 @@
 /* =============================================================================
-   buttons.css — NutriNest Button System
+   buttons.css — NutriNest Button System & Premium Hover/Tap Shine Effect
    ============================================================================= */
 
 /* ---- Base button --------------------------------------------------------- */
@@ -17,6 +17,9 @@
   border: 2px solid transparent;
   text-decoration: none;
   cursor: pointer;
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate;
   transition:
     background-color .25s var(--ease),
     color            .25s var(--ease),
@@ -25,10 +28,60 @@
     border-color     .25s var(--ease);
 }
 
-/* ---- Primary (green fill) ------------------------------------------------
-   ACCESSIBILITY NOTE: White text on #8BC53D measures 2.2:1, below 4.5:1.
-   Dark Green on Accent Orange measures 4.5:1. Kept as-is per existing design.
-   ------------------------------------------------------------------- */
+/* ---- Universal Button Hover & Tap Shine Overlay -------------------------- */
+.btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.65) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+  opacity: 0;
+  z-index: 5;
+}
+
+/* Ghost / light buttons get an accent green tinted shine streak */
+.btn--ghost::after {
+  background: linear-gradient(
+    90deg,
+    rgba(139, 197, 61, 0) 0%,
+    rgba(139, 197, 61, 0.45) 50%,
+    rgba(139, 197, 61, 0) 100%
+  );
+}
+
+/* Trigger animation on hover, tap (:active), and focus */
+.btn:hover::after,
+.btn:active::after,
+.btn:focus-visible::after {
+  animation: btn-shine-sweep 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes btn-shine-sweep {
+  0% {
+    transform: translateX(0) skewX(-22deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(380%) skewX(-22deg);
+    opacity: 0;
+  }
+}
+
+/* ---- Primary (green fill) ------------------------------------------------ */
 .btn--primary {
   background: var(--accent-orange);
   color: var(--dark-green);
@@ -54,6 +107,14 @@
   color: var(--warm-ivory);
   transform: translateY(-2px);
 }
+.btn--ghost:hover::after {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.65) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
 
 /* Dark-band ghost overrides */
 .band-dark .btn--ghost {
@@ -66,7 +127,7 @@
   border-color: var(--warm-ivory);
 }
 
-/* Hero (formerly dark hero) ghost overrides */
+/* Hero ghost overrides */
 .hero--dark .btn--ghost {
   border-color: var(--dark-green);
   color: var(--dark-green);
@@ -86,7 +147,9 @@
   background: none;
   color: var(--dark-green);
   border-bottom: 2px solid var(--leaf-green);
+  overflow: visible !important;
 }
+.btn--text::after { display: none; }
 .btn--text:hover { color: var(--leaf-ink); }
 
 /* ---- Button row layout --------------------------------------------------- */
@@ -97,7 +160,7 @@
   align-items: center;
 }
 
-/* ---- Micro-copy list (trust signals under buttons) ----------------------- */
+/* ---- Micro-copy list ----------------------------------------------------- */
 .microcopy {
   display: flex;
   flex-wrap: wrap;
@@ -123,7 +186,6 @@
 }
 .band-dark .microcopy li { color: rgba(255, 249, 239, .8); }
 
-/* ---- Hero microcopy adjustments ----------------------------------------- */
 .hero--dark .microcopy li { color: var(--ink-muted); }
 
 /* ---- Spacing helpers ----------------------------------------------------- */
