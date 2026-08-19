@@ -25,7 +25,6 @@
 .band-dark .field label { color: var(--golden-yellow); }
 
 .field input,
-.field select,
 .field textarea {
   font-family: var(--font-body);
   font-size: 1rem;
@@ -37,14 +36,195 @@
   background: var(--white);
   line-height: 1.5;
   width: 100%;
+  box-sizing: border-box;
 }
+
+.field select {
+  font-family: var(--font-body);
+  font-size: .98rem;
+  color: var(--ink);
+  padding: 14px 42px 14px 18px;
+  min-height: 54px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--dark-green-20);
+  background: var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%232E4213' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 16px center;
+  background-size: 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  line-height: 1.45;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: border-color .2s var(--ease), box-shadow .2s var(--ease);
+}
+
+.field select:focus-visible,
+.field select:focus {
+  border-color: var(--dark-green);
+  box-shadow: 0 4px 14px rgba(46, 66, 19, 0.12);
+  outline: none;
+}
+
+.field select option {
+  font-family: var(--font-body);
+  font-size: .95rem;
+  color: var(--dark-green);
+  background: var(--white);
+  padding: 10px 14px;
+}
+
+/* ---- Custom Select Component (Zero Window Overflow) ---------------------- */
+.cselect-wrap {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cselect-wrap select {
+  position: absolute !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.cselect__trigger {
+  width: 100%;
+  min-height: 54px;
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--dark-green-20);
+  background: var(--white);
+  font-family: var(--font-body);
+  font-size: .98rem;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  box-sizing: border-box;
+  text-align: left;
+  transition: border-color .2s var(--ease), box-shadow .2s var(--ease), background-color .2s var(--ease);
+}
+.cselect__trigger:hover {
+  border-color: var(--dark-green);
+  background: var(--ivory-soft);
+}
+.cselect-wrap.is-open .cselect__trigger,
+.cselect__trigger:focus-visible {
+  border-color: var(--dark-green);
+  box-shadow: 0 4px 14px rgba(46, 66, 19, 0.12);
+  outline: none;
+}
+
+.cselect__label {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cselect__arrow {
+  width: 18px;
+  height: 18px;
+  color: var(--dark-green);
+  flex-shrink: 0;
+  transition: transform .25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.cselect-wrap.is-open .cselect__arrow {
+  transform: rotate(180deg);
+}
+
+.cselect__menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  background: var(--white);
+  border: 1.5px solid var(--dark-green-20);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 12px 36px rgba(46, 66, 19, 0.18);
+  max-height: 250px;
+  overflow-y: auto;
+  z-index: 999;
+  padding: 6px 0;
+  scrollbar-width: thin;
+  animation: cselectFadeIn 200ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.cselect__menu[hidden] {
+  display: none !important;
+}
+
+@keyframes cselectFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cselect__option {
+  padding: 12px 18px;
+  font-family: var(--font-body);
+  font-size: .94rem;
+  color: var(--ink);
+  cursor: pointer;
+  line-height: 1.4;
+  white-space: normal;
+  word-break: break-word;
+  transition: background-color .15s var(--ease), color .15s var(--ease);
+}
+.cselect__option:hover,
+.cselect__option.is-focused {
+  background: var(--leaf-20);
+  color: var(--dark-green);
+  font-weight: 600;
+}
+.cselect__option.is-selected {
+  background: var(--dark-green);
+  color: var(--warm-ivory);
+  font-weight: 700;
+}
+
 .field textarea {
   min-height: 120px;
   resize: vertical;
 }
 
+/* Specify extra input box when 'Something else' is selected */
+.field--something-else {
+  margin-top: 12px;
+  grid-column: 1 / -1;
+  animation: fieldFadeIn 260ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.field--something-else[hidden] {
+  display: none !important;
+}
+
+@keyframes fieldFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .field input:focus-visible,
-.field select:focus-visible,
 .field textarea:focus-visible { outline-offset: 1px; }
 
 .field .hint {

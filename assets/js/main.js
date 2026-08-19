@@ -15,6 +15,7 @@ import { initFilters }   from './filters.js';
 import { initForms }     from './forms.js';
 import { initStickyCta } from './sticky-cta.js';
 import { initVideoModal } from './video-modal.js';
+import { initProgramModal } from './program-modal.js?v=12';
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initForms();
   initStickyCta();
   initVideoModal();
+  initProgramModal();
 
   // Before/After Image Comparison Slider
   document.addEventListener('input', (e) => {

@@ -64,12 +64,14 @@ function walkHtml(dir) {
 function setActiveLink(html, pagePath) {
   const normalized = pagePath === '/index.html' ? '/' : pagePath;
 
-  // Split into header nav and rest of document to only set aria-current inside <nav id="site-nav">
-  return html.replace(/<nav\s+class="nav"[^>]*>([\s\S]*?)<\/nav>/i, (navBlock) => {
-    return navBlock.replace(
+  // Process both top nav and bottom tab bar
+  return html.replace(/<nav\s+class="(nav|bottom-tab-bar)"[^>]*>([\s\S]*?)<\/nav>/gi, (navBlock, className, innerContent) => {
+    const updatedInner = innerContent.replace(
       /<a\s([^>]*href=["']([^"']*)["'][^>]*)>/gi,
       (match, attrs, href) => {
-        const matches = href === normalized || (normalized === '/' && href === '/index.html') || href === pagePath;
+        const matches = href === normalized || (normalized === '/' && href === '/index.html') || href === pagePath ||
+          (pagePath.startsWith('/programs/') && href.includes('/programs/')) ||
+          (pagePath.includes('about') && href.includes('about'));
         if (matches) {
           if (attrs.includes('aria-current')) return match;
           return `<a ${attrs} aria-current="page">`;
@@ -77,6 +79,7 @@ function setActiveLink(html, pagePath) {
         return match.replace(/\s*aria-current="page"/gi, '');
       }
     );
+    return navBlock.replace(innerContent, updatedInner);
   });
 }
 

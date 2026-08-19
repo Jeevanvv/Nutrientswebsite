@@ -11,22 +11,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- CSS: base system -->
-  <link rel="stylesheet" href="/assets/css/variables.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/reset.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/typography.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/layout.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/buttons.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/cards.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/navigation.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/hero.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/forms.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/accordion.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/tabs.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/carousel.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/pricing.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/footer.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/utilities.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/animations.css?v=1.7">
+  <link rel="stylesheet" href="/assets/css/variables.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/reset.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/typography.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/layout.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/buttons.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/cards.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/navigation.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/hero.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/forms.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/accordion.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/tabs.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/carousel.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/pricing.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/footer.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/utilities.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/animations.css?v=1.8">
     <script>document.documentElement.className += ' js';</script>
 </head>
 <body class="page-styleguide">
@@ -95,9 +95,6 @@
                   <li><a href="/programs/index.html#individuals">One-on-One Coaching</a></li>
                   <li><a href="/programs/index.html#individuals">Women's Health Program</a></li>
                   <li><a href="/programs/index.html#individuals">Child Nutrition Program</a></li>
-                  <li><a href="/programs/index.html#individuals">Preventive Care Program</a></li>
-                  <li><a href="/programs/index.html#individuals">Group &amp; Cohort Coaching</a></li>
-                  <li><a href="/programs/index.html#individuals">Membership Program</a></li>
                 </ul>
               </div>
               <div>
@@ -115,20 +112,17 @@
                 <ul>
                   <li><a href="/programs/index.html#specialist">Special Needs Nutrition</a></li>
                   <li><a href="/programs/index.html#specialist">Sports Nutrition</a></li>
-                  <li><a href="/resources/recipes.html">Healthy Recipe Library</a></li>
-                  <li><a href="/resources/courses.html">Nutrition Courses</a></li>
                 </ul>
               </div>
             </div>
             <div class="menu__foot">
               <p>Not sure which one fits?</p>
-              <a class="btn btn--ghost" href="/programs/index.html">See all 15 programs →</a>
+              <a class="btn btn--ghost" href="/programs/index.html">See all programs →</a>
             </div>
           </div>
         </li>
 
         <li><a href="/resources/recipes.html">Recipes</a></li>
-        <li><a href="/resources/courses.html">Courses</a></li>
         <li><a href="/about.html">Why us</a></li>
         <li><a href="/testimonials.html">Testimonials</a></li>
         <li><a href="/contact.html" class="nav__link--contact">Book Consultation</a></li>
@@ -149,6 +143,9 @@
 
 <!-- ========== BOTTOM TAB BAR (Mobile only, fixed) ========== -->
 <nav class="bottom-tab-bar" id="bottom-tab-bar" aria-label="Main navigation">
+  <!-- Sliding active tab background indicator -->
+  <div class="tab-indicator" id="tab-indicator" aria-hidden="true"></div>
+
   <!-- Home -->
   <a class="tab-item" href="/index.html" data-tab-match="/" id="tab-home">
     <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -276,7 +273,6 @@
           <li><a href="/programs/womens-health.html">Women's Health</a></li>
           <li><a href="/programs/child-nutrition.html">Child Nutrition</a></li>
           <li><a href="/programs/preventive-care.html">Preventive Care</a></li>
-          <li><a href="/programs/group-coaching.html">Group &amp; Cohort Coaching</a></li>
           <li><a href="/programs/membership.html">Membership Program</a></li>
         </ul>
       </div>
@@ -300,7 +296,6 @@
         <h4>Resources</h4>
         <ul>
           <li><a href="/resources/recipes.html">Recipe Library</a></li>
-          <li><a href="/resources/courses.html">Courses</a></li>
           <li><a href="/about.html">About Megha</a></li>
           <li><a href="/contact.html">Book a consultation</a></li>
         </ul>
@@ -308,6 +303,7 @@
         <ul>
           <li><a href="/privacy.html">Privacy Policy</a></li>
           <li><a href="/terms.html">Terms of Service</a></li>
+          <li><a href="/terms.html#program-terms">Program Terms &amp; Protocol</a></li>
         </ul>
       </div>
     </div>
@@ -323,7 +319,7 @@
 </footer>
 
 <!-- Main JS (ES module) -->
-<script type="module" src="/assets/js/main.js"></script>
+<script type="module" src="/assets/js/main.js?v=12"></script>
 
 <!-- Dynamic footer year -->
 <script>

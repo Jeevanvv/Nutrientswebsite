@@ -7,7 +7,8 @@
 .hero {
   position: relative;
   overflow: hidden;
-  padding-block: clamp(72px, 10vw, 128px);
+  padding-top: clamp(40px, 5vw, 64px);
+  padding-bottom: 16px;
 }
 
 /* Clear hero backgrounds — the restyle puts a radial gradient instead */

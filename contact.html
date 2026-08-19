@@ -11,23 +11,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- CSS: base system -->
-  <link rel="stylesheet" href="/assets/css/variables.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/reset.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/typography.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/layout.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/buttons.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/cards.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/navigation.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/hero.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/forms.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/accordion.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/tabs.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/carousel.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/pricing.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/footer.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/utilities.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/animations.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/pages/contact.css?v=1.7">
+  <link rel="stylesheet" href="/assets/css/variables.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/reset.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/typography.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/layout.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/buttons.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/cards.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/navigation.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/hero.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/forms.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/accordion.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/tabs.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/carousel.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/pricing.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/footer.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/utilities.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/animations.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/pages/contact.css?v=1.8">
   <script>document.documentElement.className += ' js';</script>
 </head>
 <body class="page-contact">
@@ -96,9 +96,6 @@
                   <li><a href="/programs/index.html#individuals">One-on-One Coaching</a></li>
                   <li><a href="/programs/index.html#individuals">Women's Health Program</a></li>
                   <li><a href="/programs/index.html#individuals">Child Nutrition Program</a></li>
-                  <li><a href="/programs/index.html#individuals">Preventive Care Program</a></li>
-                  <li><a href="/programs/index.html#individuals">Group &amp; Cohort Coaching</a></li>
-                  <li><a href="/programs/index.html#individuals">Membership Program</a></li>
                 </ul>
               </div>
               <div>
@@ -116,20 +113,17 @@
                 <ul>
                   <li><a href="/programs/index.html#specialist">Special Needs Nutrition</a></li>
                   <li><a href="/programs/index.html#specialist">Sports Nutrition</a></li>
-                  <li><a href="/resources/recipes.html">Healthy Recipe Library</a></li>
-                  <li><a href="/resources/courses.html">Nutrition Courses</a></li>
                 </ul>
               </div>
             </div>
             <div class="menu__foot">
               <p>Not sure which one fits?</p>
-              <a class="btn btn--ghost" href="/programs/index.html">See all 15 programs →</a>
+              <a class="btn btn--ghost" href="/programs/index.html">See all programs →</a>
             </div>
           </div>
         </li>
 
         <li><a href="/resources/recipes.html">Recipes</a></li>
-        <li><a href="/resources/courses.html">Courses</a></li>
         <li><a href="/about.html">Why us</a></li>
         <li><a href="/testimonials.html">Testimonials</a></li>
         <li><a href="/contact.html" class="nav__link--contact" aria-current="page">Book Consultation</a></li>
@@ -150,6 +144,9 @@
 
 <!-- ========== BOTTOM TAB BAR (Mobile only, fixed) ========== -->
 <nav class="bottom-tab-bar" id="bottom-tab-bar" aria-label="Main navigation">
+  <!-- Sliding active tab background indicator -->
+  <div class="tab-indicator" id="tab-indicator" aria-hidden="true"></div>
+
   <!-- Home -->
   <a class="tab-item" href="/index.html" data-tab-match="/" id="tab-home">
     <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -213,7 +210,81 @@
   </div>
 </section><section class="section band-white">
 <div class="wrap">
-<div class="split"><div class="reveal"><h2 id="booking-h" id="contact--booking-h">Book your consultation</h2><p class="lead">One call, forty-five minutes, and an honest answer about whether a program will help you. Bring any blood work from the last six months.</p></div><div><form class="form reveal" data-demo aria-labelledby="contact--booking-h"><div class="form__row"><div class="field"><label for="contact--booking-name">Name</label><input type="text" id="booking-name" id="contact--booking-name" name="booking-name" required></div><div class="field"><label for="contact--booking-email">Email</label><input type="email" id="booking-email" id="contact--booking-email" name="booking-email" required></div></div><div class="form__row"><div class="field"><label for="contact--booking-phone-or-whatsapp-number">Phone or WhatsApp number</label><input type="tel" id="booking-phone-or-whatsapp-number" id="contact--booking-phone-or-whatsapp-number" name="booking-phone-or-whatsapp-number" required></div><div class="field"><label for="contact--booking-city-and-time-zone">City and time zone</label><input type="text" id="booking-city-and-time-zone" id="contact--booking-city-and-time-zone" name="booking-city-and-time-zone"><span class="hint">We coach clients across 10+ countries</span></div></div><div class="form__row"><div class="field"><label for="contact--booking-what-you-would-like-help-with">What you would like help with</label><select id="booking-what-you-would-like-help-with" id="contact--booking-what-you-would-like-help-with" name="booking-what-you-would-like-help-with"><option>Weight and metabolic health</option><option>PCOS or hormonal health</option><option>Thyroid</option><option>Gut health</option><option>Fertility, pregnancy or postpartum</option><option>Child or teen nutrition</option><option>Preventive care</option><option>Sports and performance</option><option>Special needs nutrition</option><option>Group cohort</option><option>Membership</option><option>Something else</option></select></div><div class="field"><label for="contact--booking-preferred-consultation-time">Preferred consultation time</label><select id="booking-preferred-consultation-time" id="contact--booking-preferred-consultation-time" name="booking-preferred-consultation-time"><option>Weekday morning</option><option>Weekday afternoon</option><option>Weekday evening</option><option>Weekend</option><option>Flexible</option></select></div></div><div class="field"><label for="contact--booking-anything-we-should-know-before-the-call">Anything we should know before the call</label><textarea id="booking-anything-we-should-know-before-the-call" id="contact--booking-anything-we-should-know-before-the-call" name="booking-anything-we-should-know-before-the-call" rows="4"></textarea><span class="hint">Recent blood reports, diagnoses, medication, or what you have already tried</span></div><div class="btn-row"><button class="btn btn--primary" type="submit">Book your consultation</button></div><p class="form-note" data-form-note>We reply within one working day. Your details are used only to respond to this enquiry.</p></form></div></div>
+<div class="split">
+  <div class="reveal">
+    <h2 id="booking-h" id="contact--booking-h">Book your consultation</h2>
+    <p class="lead">One call, forty-five minutes, and an honest answer about whether a program will help you. Bring any blood work from the last six months.</p>
+  </div>
+  <div>
+    <form class="form reveal" data-demo aria-labelledby="contact--booking-h">
+      <div class="form__row">
+        <div class="field">
+          <label for="booking-name">Name</label>
+          <input type="text" id="booking-name" name="booking-name" required>
+        </div>
+        <div class="field">
+          <label for="booking-email">Email</label>
+          <input type="email" id="booking-email" name="booking-email" required>
+        </div>
+      </div>
+      <div class="form__row">
+        <div class="field">
+          <label for="booking-phone">Phone or WhatsApp number</label>
+          <input type="tel" id="booking-phone" name="booking-phone-or-whatsapp-number" required>
+        </div>
+        <div class="field">
+          <label for="booking-city">City and time zone</label>
+          <input type="text" id="booking-city" name="booking-city-and-time-zone">
+          <span class="hint">We coach clients across 10+ countries</span>
+        </div>
+      </div>
+      <div class="form__row">
+        <div class="field">
+          <label for="booking-help">What you would like help with</label>
+          <select id="booking-help" name="booking-what-you-would-like-help-with">
+            <option value="Weight and metabolic health">Weight and metabolic health</option>
+            <option value="PCOS or hormonal health">PCOS or hormonal health</option>
+            <option value="Thyroid">Thyroid</option>
+            <option value="Gut health">Gut health</option>
+            <option value="Fertility, pregnancy or postpartum">Fertility, pregnancy or postpartum</option>
+            <option value="Child or teen nutrition">Child or teen nutrition</option>
+            <option value="Preventive care">Preventive care</option>
+            <option value="Sports and performance">Sports and performance</option>
+            <option value="Special needs nutrition">Special needs nutrition</option>
+            <option value="Membership">Membership</option>
+            <option value="Something else">Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="booking-time">Preferred consultation time</label>
+          <select id="booking-time" name="booking-preferred-consultation-time">
+            <option value="Weekday morning">Weekday morning</option>
+            <option value="Weekday afternoon">Weekday afternoon</option>
+            <option value="Weekday evening">Weekday evening</option>
+            <option value="Weekend">Weekend</option>
+            <option value="Flexible">Flexible</option>
+          </select>
+        </div>
+
+        <!-- Dynamic field revealed when 'Something else' is selected -->
+        <div class="field field--something-else" id="booking-something-else-wrap" hidden>
+          <label for="booking-something-else-detail">Please specify what you would like help with</label>
+          <input type="text" id="booking-something-else-detail" name="booking-something-else-detail" placeholder="Tell us what you'd like to work on...">
+          <span class="hint">Write anything you want — Megha will review this before your call</span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="booking-notes">Anything we should know before the call</label>
+        <textarea id="booking-notes" name="booking-anything-we-should-know-before-the-call" rows="4"></textarea>
+        <span class="hint">Recent blood reports, diagnoses, medication, or what you have already tried</span>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn--primary" type="submit">Book your consultation</button>
+      </div>
+      <p class="form-note" data-form-note>We reply within one working day. Your details are used only to respond to this enquiry.</p>
+    </form>
+  </div>
+</div>
 </div>
 </section>
 <section class="section band-ivory">
@@ -287,7 +358,6 @@
           <li><a href="/programs/womens-health.html">Women's Health</a></li>
           <li><a href="/programs/child-nutrition.html">Child Nutrition</a></li>
           <li><a href="/programs/preventive-care.html">Preventive Care</a></li>
-          <li><a href="/programs/group-coaching.html">Group &amp; Cohort Coaching</a></li>
           <li><a href="/programs/membership.html">Membership Program</a></li>
         </ul>
       </div>
@@ -311,7 +381,6 @@
         <h4>Resources</h4>
         <ul>
           <li><a href="/resources/recipes.html">Recipe Library</a></li>
-          <li><a href="/resources/courses.html">Courses</a></li>
           <li><a href="/about.html">About Megha</a></li>
           <li><a href="/contact.html">Book a consultation</a></li>
         </ul>
@@ -319,6 +388,7 @@
         <ul>
           <li><a href="/privacy.html">Privacy Policy</a></li>
           <li><a href="/terms.html">Terms of Service</a></li>
+          <li><a href="/terms.html#program-terms">Program Terms &amp; Protocol</a></li>
         </ul>
       </div>
     </div>
@@ -334,7 +404,7 @@
 </footer>
 
 <!-- Main JS (ES module) -->
-<script type="module" src="/assets/js/main.js"></script>
+<script type="module" src="/assets/js/main.js?v=12"></script>
 
 <!-- Dynamic footer year -->
 <script>

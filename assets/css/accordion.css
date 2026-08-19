@@ -53,9 +53,17 @@
   opacity: 0;
 }
 
-/* Panel */
-.acc-panel { display: none; padding: 2px 48px 26px 8px; }
-.acc-panel[data-open] { display: block; }
+/* Panel — smooth expand via maxHeight (JS sets the value) */
+.acc-panel {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 48px 0 8px;   /* no vertical padding at rest so collapse is clean */
+  transition: max-height .4s var(--ease), padding .4s var(--ease);
+}
+.acc-panel[data-open] {
+  padding: 2px 48px 26px 8px; /* restore visual padding when open */
+  /* max-height is set inline by JS to panel.scrollHeight */
+}
 .acc-panel p {
   color: var(--ink-soft);
   margin-bottom: 0;

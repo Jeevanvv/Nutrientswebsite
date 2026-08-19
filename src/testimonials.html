@@ -11,22 +11,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- CSS: base system -->
-  <link rel="stylesheet" href="/assets/css/variables.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/reset.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/typography.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/layout.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/buttons.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/cards.css?v=1.7">
+  <link rel="stylesheet" href="/assets/css/variables.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/reset.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/typography.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/layout.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/buttons.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/cards.css?v=1.8">
   <link rel="stylesheet" href="/assets/css/navigation.css?v=2.0">
-  <link rel="stylesheet" href="/assets/css/hero.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/forms.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/accordion.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/tabs.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/carousel.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/pricing.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/footer.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/utilities.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/animations.css?v=1.7">
+  <link rel="stylesheet" href="/assets/css/hero.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/forms.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/accordion.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/tabs.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/carousel.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/pricing.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/footer.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/utilities.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/animations.css?v=1.8">
   <link rel="stylesheet" href="/assets/css/pages/corporate.css?v=3.0">
   <script>document.documentElement.className += ' js';</script>
 </head>
@@ -42,16 +42,6 @@
       <span class="eyebrow reveal">Real Transformations</span>
       <h1 class="reveal">Real People.<br>Real Transformations.<br><em>Measurable results.<svg viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M4 10 C 80 2, 220 2, 296 8" fill="none" stroke="#8BC53D" stroke-width="5" stroke-linecap="round"/></svg></em></h1>
       <p class="reveal">Honest feedback, before &amp; after journeys, and inspiring stories from clients who worked 1-on-1 with Senior Clinical Nutritionist Megha Kiran.</p>
-      <div class="hero-cta reveal">
-        <a href="/contact.html" class="btn">Book Your Consultation</a>
-        <span class="hero-note">500+ Transformations · 10+ Countries</span>
-      </div>
-      <div class="hero-stats reveal">
-        <div class="stat"><b>500+</b><span>Clients Supported</span></div>
-        <div class="stat"><b>10+</b><span>Countries Served</span></div>
-        <div class="stat"><b>4+ Years</b><span>Clinical Practice</span></div>
-        <div class="stat"><b>100%</b><span>Personalized Plans</span></div>
-      </div>
     </div>
   </header>
 
@@ -63,76 +53,329 @@
     </div>
   </section>
 
-  <!-- BEFORE & AFTER TRANSFORMATIONS SECTION -->
-  <section class="section band-ivory" id="transformations">
+
+
+  <!-- CATEGORIZED PHOTO GALLERY SECTION -->
+  <section class="section band-white" id="photo-gallery">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="sec-label">Visual Transformations</span>
-        <h2>Before &amp; After Journeys</h2>
-        <p>Interactive slider comparisons showing real client progress across weight management, metabolic health, and energy optimization.</p>
+        <span class="sec-label">Transformation Gallery</span>
+        <h2>Client Photo Gallery</h2>
+        <p>Browse transformation stories, clinical results, and workshop highlights sorted by category.</p>
       </div>
 
-      <div class="grid g2 mt4">
-        <article class="card reveal" style="padding: 24px; text-align: center;">
-          <h3 style="margin-bottom: 6px;">Side-Profile Transformation</h3>
-          <p style="color: var(--ink-soft); font-size: 0.88rem; margin-bottom: 20px;">Drag the green center handle left &amp; right to compare Before and After.</p>
-          
-          <!-- Interactive Comparison Slider -->
-          <div class="ba-slider" data-ba-slider>
-            <div class="ba-slider__after">
-              <img src="/assets/images/testimonials/after-1.jpg" alt="Client after transformation">
-              <span class="ba-slider__badge ba-slider__badge--after">AFTER</span>
-            </div>
-            <div class="ba-slider__before">
-              <img src="/assets/images/testimonials/before-1.jpg" alt="Client before transformation">
-              <span class="ba-slider__badge ba-slider__badge--before">BEFORE</span>
-            </div>
-            <div class="ba-slider__handle">
-              <div class="ba-slider__line"></div>
-              <div class="ba-slider__button" aria-label="Drag to compare before and after">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="15 18 9 12 15 6"/>
-                  <polyline points="9 18 15 12 9 6"/>
-                </svg>
+      <!-- Category Filter Tabs Bar (Single-Row Horizontal Scrollable Segmented Track) -->
+      <div class="filter-bar filter-scroll-bar reveal" data-filter-group data-filter-target="#tgallery-grid">
+        <button type="button" class="chip chip--filter" aria-pressed="true" data-value="all">All Stories</button>
+        <button type="button" class="chip chip--filter" aria-pressed="false" data-value="hair-fall">Hair Fall &amp; Regrowth</button>
+        <button type="button" class="chip chip--filter" aria-pressed="false" data-value="pregnancy">Pregnancy &amp; Fertility</button>
+        <button type="button" class="chip chip--filter" aria-pressed="false" data-value="fat-loss">Fat Loss</button>
+        <button type="button" class="chip chip--filter" aria-pressed="false" data-value="skin">Skin &amp; Health</button>
+        <button type="button" class="chip chip--filter" aria-pressed="false" data-value="womens-health">Women's Health &amp; PCOS</button>
+        <button type="button" class="chip chip--filter" aria-pressed="false" data-value="gut-health">Gut &amp; Diabetes Care</button>
+        <button type="button" class="chip chip--filter" aria-pressed="false" data-value="workshops">Workshops &amp; Events</button>
+      </div>
+
+      <!-- Photo Cards Horizontal Swipe Track -->
+      <div class="tgallery-hscroll" id="tgallery-grid">
+        <!-- Photo Card 1: Hair Fall & Regrowth (Density & Hairline) -->
+        <article class="card tgallery-card reveal" data-tags="hair-fall">
+          <div class="tgallery-card__img-wrap" style="position:relative;">
+            <div class="ba-slider" data-ba-slider style="border-radius:var(--radius-sm) var(--radius-sm) 0 0;">
+              <div class="ba-slider__after">
+                <img src="/assets/images/testimonials/after-hairfall.png" alt="Hair Regrowth Transformation After">
+                <span class="ba-slider__badge ba-slider__badge--after">AFTER</span>
               </div>
+              <div class="ba-slider__before">
+                <img src="/assets/images/testimonials/before-hairfall.png" alt="Hair Thinning Transformation Before">
+                <span class="ba-slider__badge ba-slider__badge--before">BEFORE</span>
+              </div>
+              <div class="ba-slider__handle">
+                <div class="ba-slider__line"></div>
+                <div class="ba-slider__button" aria-label="Drag to compare before and after">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"/>
+                    <polyline points="9 18 15 12 9 6"/>
+                  </svg>
+                </div>
+              </div>
+              <input type="range" min="0" max="100" value="50" class="ba-slider__range" aria-label="Slide to compare before and after photos">
             </div>
-            <input type="range" min="0" max="100" value="50" class="ba-slider__range" aria-label="Slide to compare before and after photos">
+            <span class="tgallery-card__badge">Hair Fall &amp; Regrowth</span>
           </div>
-          <figcaption style="margin-top: 16px; font-weight: 600; color: var(--dark-green); font-size: 0.9rem;">- 1-on-1 Transformation Journey</figcaption>
+          <div class="tgallery-card__body">
+            <h3>Hair Density &amp; Hair Fall Reversal</h3>
+            <p>Interactive Before &amp; After: Root-cause nutrition protocol reversing hair thinning &amp; stimulating scalp hair growth.</p>
+            <span class="tgallery-card__meta">3 Months Hair Protocol</span>
+          </div>
         </article>
 
-        <article class="card reveal" style="padding: 24px; text-align: center;">
-          <h3 style="margin-bottom: 6px;">Metabolic &amp; Lifestyle Success</h3>
-          <p style="color: var(--ink-soft); font-size: 0.88rem; margin-bottom: 20px;">Drag the green center handle left &amp; right to compare Before and After.</p>
-
-          <!-- Interactive Comparison Slider 2 -->
-          <div class="ba-slider" data-ba-slider>
-            <div class="ba-slider__after">
-              <img src="/assets/images/testimonials/after-2.jpg" alt="Client after transformation">
-              <span class="ba-slider__badge ba-slider__badge--after">AFTER</span>
-            </div>
-            <div class="ba-slider__before">
-              <img src="/assets/images/testimonials/before-2.jpg" alt="Client before transformation">
-              <span class="ba-slider__badge ba-slider__badge--before">BEFORE</span>
-            </div>
-            <div class="ba-slider__handle">
-              <div class="ba-slider__line"></div>
-              <div class="ba-slider__button" aria-label="Drag to compare before and after">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="15 18 9 12 15 6"/>
-                  <polyline points="9 18 15 12 9 6"/>
-                </svg>
+        <!-- Photo Card 2: Hair Fall & Regrowth (Volume & Length) -->
+        <article class="card tgallery-card reveal" data-tags="hair-fall">
+          <div class="tgallery-card__img-wrap" style="position:relative;">
+            <div class="ba-slider" data-ba-slider style="border-radius:var(--radius-sm) var(--radius-sm) 0 0;">
+              <div class="ba-slider__after">
+                <img src="/assets/images/testimonials/after-hair-2.png" alt="Hair Volume Transformation After">
+                <span class="ba-slider__badge ba-slider__badge--after">AFTER</span>
               </div>
+              <div class="ba-slider__before">
+                <img src="/assets/images/testimonials/before-hair-2.png" alt="Hair Length Transformation Before">
+                <span class="ba-slider__badge ba-slider__badge--before">BEFORE</span>
+              </div>
+              <div class="ba-slider__handle">
+                <div class="ba-slider__line"></div>
+                <div class="ba-slider__button" aria-label="Drag to compare before and after">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"/>
+                    <polyline points="9 18 15 12 9 6"/>
+                  </svg>
+                </div>
+              </div>
+              <input type="range" min="0" max="100" value="50" class="ba-slider__range" aria-label="Slide to compare before and after photos">
             </div>
-            <input type="range" min="0" max="100" value="50" class="ba-slider__range" aria-label="Slide to compare before and after photos">
+            <span class="tgallery-card__badge">Hair Fall &amp; Regrowth</span>
           </div>
-          <figcaption style="margin-top: 16px; font-weight: 600; color: var(--dark-green); font-size: 0.9rem;">- Personalized Root-Cause Protocol</figcaption>
+          <div class="tgallery-card__body">
+            <h3>Hair Volume &amp; Length Growth</h3>
+            <p>Interactive Before &amp; After: Deep nutritional nourish protocol enhancing hair thickness, volume, and natural shine.</p>
+            <span class="tgallery-card__meta">6 Months Hair Journey</span>
+          </div>
+        </article>
+        <!-- Photo Card 1: Pregnancy & Fertility -->
+        <article class="card tgallery-card reveal" data-tags="pregnancy">
+          <div class="tgallery-card__img-wrap">
+            <img src="/assets/images/testimonials/pregnancy-success.png" alt="Pregnancy & Fertility Success Story 1" loading="lazy" style="filter: contrast(1.06) brightness(1.02); width: 100%; height: 100%; object-fit: cover;">
+            <span class="tgallery-card__badge" style="background: var(--dark-green); color: #FFFDF7;">Pregnancy &amp; Fertility</span>
+          </div>
+          <div class="tgallery-card__body">
+            <h3>Fertility &amp; Natural Conception Success</h3>
+            <p>&ldquo;I'm pregnant! I'm so grateful to your team. Followed your diet plan for 4 months... Thank you for your guidance.&rdquo;</p>
+            <span class="tgallery-card__meta">4 Months Protocol · Clinical Success</span>
+          </div>
+        </article>
+
+        <!-- Photo Card 2: Pregnancy & Fertility (Lean PCOS) -->
+        <article class="card tgallery-card reveal" data-tags="pregnancy">
+          <div class="tgallery-card__img-wrap">
+            <img src="/assets/images/testimonials/pregnancy-success-2.png" alt="Lean PCOS Pregnancy Success Story" loading="lazy" style="filter: contrast(1.06) brightness(1.02); width: 100%; height: 100%; object-fit: cover;">
+            <span class="tgallery-card__badge" style="background: var(--dark-green); color: #FFFDF7;">Pregnancy &amp; Fertility</span>
+          </div>
+          <div class="tgallery-card__body">
+            <h3>Lean PCOS &amp; Natural Conception</h3>
+            <p>&ldquo;I tested positive... Such a positive thing to start my day. Lean PCOD nutrition protocol success.&rdquo;</p>
+            <span class="tgallery-card__meta">Lean PCOD Fertility Care</span>
+          </div>
+        </article>
+
+        <!-- Photo Card 3: Pregnancy & Fertility (Seed Cycling) -->
+        <article class="card tgallery-card reveal" data-tags="pregnancy">
+          <div class="tgallery-card__img-wrap">
+            <img src="/assets/images/testimonials/pregnancy-success-3.png" alt="Seed Cycling Pregnancy Magic Story" loading="lazy" style="filter: contrast(1.06) brightness(1.02); width: 100%; height: 100%; object-fit: cover;">
+            <span class="tgallery-card__badge" style="background: var(--dark-green); color: #FFFDF7;">Pregnancy &amp; Fertility</span>
+          </div>
+          <div class="tgallery-card__body">
+            <h3>Seed Cycling &amp; Natural Fertility Magic</h3>
+            <p>&ldquo;Woke up to this today... result of your seed cycling. Had so much circus for 1st pregnancy and this time it's magic!&rdquo;</p>
+            <span class="tgallery-card__meta">Seed Cycling &amp; Hormone Protocol</span>
+          </div>
+        </article>
+        <!-- Photo Card 1: Fat Loss -->
+        <article class="card tgallery-card reveal" data-tags="fat-loss">
+          <div class="tgallery-card__img-wrap" style="position:relative;">
+            <div class="ba-slider" data-ba-slider style="border-radius:var(--radius-sm) var(--radius-sm) 0 0;">
+              <div class="ba-slider__after">
+                <img src="/assets/images/testimonials/after-1.jpg" alt="Fat Loss Transformation After">
+                <span class="ba-slider__badge ba-slider__badge--after">AFTER</span>
+              </div>
+              <div class="ba-slider__before">
+                <img src="/assets/images/testimonials/before-1.jpg" alt="Fat Loss Transformation Before">
+                <span class="ba-slider__badge ba-slider__badge--before">BEFORE</span>
+              </div>
+              <div class="ba-slider__handle">
+                <div class="ba-slider__line"></div>
+                <div class="ba-slider__button" aria-label="Drag to compare before and after">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"/>
+                    <polyline points="9 18 15 12 9 6"/>
+                  </svg>
+                </div>
+              </div>
+              <input type="range" min="0" max="100" value="50" class="ba-slider__range" aria-label="Slide to compare before and after photos">
+            </div>
+            <span class="tgallery-card__badge">Fat Loss</span>
+          </div>
+          <div class="tgallery-card__body">
+            <h3>1-on-1 Fat Loss Journey</h3>
+            <p>Interactive Before &amp; After: 8 kg fat reduction achieved through root-cause nutrition.</p>
+            <span class="tgallery-card__meta">3 Months Coaching</span>
+          </div>
+        </article>
+
+        <!-- Photo Card 2: Fat Loss & Reset -->
+        <article class="card tgallery-card reveal" data-tags="fat-loss">
+          <div class="tgallery-card__img-wrap" style="position:relative;">
+            <div class="ba-slider" data-ba-slider style="border-radius:var(--radius-sm) var(--radius-sm) 0 0;">
+              <div class="ba-slider__after">
+                <img src="/assets/images/testimonials/after-2.jpg" alt="Fat Loss & Inch Loss Transformation After">
+                <span class="ba-slider__badge ba-slider__badge--after">AFTER</span>
+              </div>
+              <div class="ba-slider__before">
+                <img src="/assets/images/testimonials/before-2.jpg" alt="Fat Loss & Inch Loss Transformation Before">
+                <span class="ba-slider__badge ba-slider__badge--before">BEFORE</span>
+              </div>
+              <div class="ba-slider__handle">
+                <div class="ba-slider__line"></div>
+                <div class="ba-slider__button" aria-label="Drag to compare before and after">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"/>
+                    <polyline points="9 18 15 12 9 6"/>
+                  </svg>
+                </div>
+              </div>
+              <input type="range" min="0" max="100" value="50" class="ba-slider__range" aria-label="Slide to compare before and after photos">
+            </div>
+            <span class="tgallery-card__badge">Fat Loss</span>
+          </div>
+          <div class="tgallery-card__body">
+            <h3>Postpartum Fat Loss &amp; Reset</h3>
+            <p>Interactive Before &amp; After: Restored metabolism, inch loss, and energy post-pregnancy.</p>
+            <span class="tgallery-card__meta">6 Months Journey</span>
+          </div>
+        </article>
+
+        <!-- Photo Card 3: Male Fat Loss & Lifestyle -->
+        <article class="card tgallery-card reveal" data-tags="fat-loss">
+          <div class="tgallery-card__img-wrap" style="position:relative;">
+            <div class="ba-slider" data-ba-slider style="border-radius:var(--radius-sm) var(--radius-sm) 0 0;">
+              <div class="ba-slider__after">
+                <img src="/assets/images/testimonials/after-3.png" alt="Male Fat Loss Transformation After">
+                <span class="ba-slider__badge ba-slider__badge--after">AFTER</span>
+              </div>
+              <div class="ba-slider__before">
+                <img src="/assets/images/testimonials/before-3.png" alt="Male Fat Loss Transformation Before">
+                <span class="ba-slider__badge ba-slider__badge--before">BEFORE</span>
+              </div>
+              <div class="ba-slider__handle">
+                <div class="ba-slider__line"></div>
+                <div class="ba-slider__button" aria-label="Drag to compare before and after">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"/>
+                    <polyline points="9 18 15 12 9 6"/>
+                  </svg>
+                </div>
+              </div>
+              <input type="range" min="0" max="100" value="50" class="ba-slider__range" aria-label="Slide to compare before and after photos">
+            </div>
+            <span class="tgallery-card__badge">Fat Loss</span>
+          </div>
+          <div class="tgallery-card__body">
+            <h3>Male Body Composition &amp; Fat Loss</h3>
+            <p>Interactive Before &amp; After: Sustainable weight reduction and muscle preservation with regional Indian diet.</p>
+            <span class="tgallery-card__meta">4 Months Transformation</span>
+          </div>
+        </article>
+
+        <!-- Photo Card 3: Skin & Health 1 -->
+        <article class="card tgallery-card reveal" data-tags="skin">
+          <div class="tgallery-card__img-wrap" style="position:relative;">
+            <div class="ba-slider" data-ba-slider style="border-radius:var(--radius-sm) var(--radius-sm) 0 0;">
+              <div class="ba-slider__after">
+                <img src="/assets/images/testimonials/after-skin.png" alt="Skin Transformation After">
+                <span class="ba-slider__badge ba-slider__badge--after">AFTER</span>
+              </div>
+              <div class="ba-slider__before">
+                <img src="/assets/images/testimonials/before-skin.png" alt="Skin Transformation Before">
+                <span class="ba-slider__badge ba-slider__badge--before">BEFORE</span>
+              </div>
+              <div class="ba-slider__handle">
+                <div class="ba-slider__line"></div>
+                <div class="ba-slider__button" aria-label="Drag to compare before and after">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"/>
+                    <polyline points="9 18 15 12 9 6"/>
+                  </svg>
+                </div>
+              </div>
+              <input type="range" min="0" max="100" value="50" class="ba-slider__range" aria-label="Slide to compare before and after photos">
+            </div>
+            <span class="tgallery-card__badge">Skin &amp; Health</span>
+          </div>
+          <div class="tgallery-card__body">
+            <h3>Skin &amp; Cellular Health Reset</h3>
+            <p>Interactive Before &amp; After: Clinical nutrition protocol for skin health &amp; micronutrient recovery.</p>
+            <span class="tgallery-card__meta">3 Months Protocol</span>
+          </div>
+        </article>
+
+        <!-- Photo Card 4: Skin & Health 2 -->
+        <article class="card tgallery-card reveal" data-tags="skin">
+          <div class="tgallery-card__img-wrap" style="position:relative;">
+            <div class="ba-slider" data-ba-slider style="border-radius:var(--radius-sm) var(--radius-sm) 0 0;">
+              <div class="ba-slider__after">
+                <img src="/assets/images/testimonials/after-skin-2.png" alt="Skin Barrier Transformation After">
+                <span class="ba-slider__badge ba-slider__badge--after">AFTER</span>
+              </div>
+              <div class="ba-slider__before">
+                <img src="/assets/images/testimonials/before-skin-2.png" alt="Skin Barrier Transformation Before">
+                <span class="ba-slider__badge ba-slider__badge--before">BEFORE</span>
+              </div>
+              <div class="ba-slider__handle">
+                <div class="ba-slider__line"></div>
+                <div class="ba-slider__button" aria-label="Drag to compare before and after">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"/>
+                    <polyline points="9 18 15 12 9 6"/>
+                  </svg>
+                </div>
+              </div>
+              <input type="range" min="0" max="100" value="50" class="ba-slider__range" aria-label="Slide to compare before and after photos">
+            </div>
+            <span class="tgallery-card__badge">Skin &amp; Health</span>
+          </div>
+          <div class="tgallery-card__body">
+            <h3>Skin Barrier &amp; Peeling Recovery</h3>
+            <p>Interactive Before &amp; After: Clinical gut-skin nutrition protocol eliminating skin flaking &amp; restoring moisture barrier.</p>
+            <span class="tgallery-card__meta">1-on-1 Skin Protocol</span>
+          </div>
+        </article>
+
+        <!-- Photo Card 5: Skin & Health 3 (Acne) -->
+        <article class="card tgallery-card reveal" data-tags="skin">
+          <div class="tgallery-card__img-wrap" style="position:relative;">
+            <div class="ba-slider" data-ba-slider style="border-radius:var(--radius-sm) var(--radius-sm) 0 0;">
+              <div class="ba-slider__after">
+                <img src="/assets/images/testimonials/after-acne.png" alt="Clear Skin Transformation After">
+                <span class="ba-slider__badge ba-slider__badge--after">AFTER</span>
+              </div>
+              <div class="ba-slider__before">
+                <img src="/assets/images/testimonials/before-acne.png" alt="Hormonal Acne Transformation Before">
+                <span class="ba-slider__badge ba-slider__badge--before">BEFORE</span>
+              </div>
+              <div class="ba-slider__handle">
+                <div class="ba-slider__line"></div>
+                <div class="ba-slider__button" aria-label="Drag to compare before and after">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"/>
+                    <polyline points="9 18 15 12 9 6"/>
+                  </svg>
+                </div>
+              </div>
+              <input type="range" min="0" max="100" value="50" class="ba-slider__range" aria-label="Slide to compare before and after photos">
+            </div>
+            <span class="tgallery-card__badge">Skin &amp; Health</span>
+          </div>
+          <div class="tgallery-card__body">
+            <h3>Hormonal Acne &amp; Clear Skin Journey</h3>
+            <p>Interactive Before &amp; After: Root-cause gut &amp; hormone nutrition clearing inflammatory acne and acne marks.</p>
+            <span class="tgallery-card__meta">12 Weeks Transformation</span>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- VIDEO TESTIMONIALS SECTION -->
-  <section class="section band-white" id="video-testimonials">
+  <section class="section band-ivory" id="video-testimonials">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="sec-label">Video Stories</span>
@@ -204,13 +447,24 @@
     </div>
   </section>
 
-  <!-- CTA CARD -->
-  <section class="cta">
+  <!-- BOTTOM CONSULTATION CTA & STATS SECTION -->
+  <section class="section band-white" id="bottom-cta-stats" style="text-align: center;">
     <div class="wrap">
-      <div class="cta-card reveal">
-        <h2>Start your own transformation story today.</h2>
-        <p>Book a direct 1-on-1 consultation with Megha Kiran and get a personalized nutrition protocol built for your body.</p>
-        <a href="/contact.html" class="btn btn--primary">Book Consultation</a>
+      <div class="cta-card reveal" style="background: var(--dark-green); color: var(--warm-ivory); border-radius: var(--radius); padding: 44px 28px; box-shadow: 0 10px 30px rgba(46, 66, 19, 0.15);">
+        <h2 style="color: var(--warm-ivory); margin-bottom: 10px;">Start Your Own Transformation Story Today</h2>
+        <p style="color: rgba(255, 249, 239, 0.88); max-width: 600px; margin: 0 auto 24px; font-size: 1rem;">Book a direct 1-on-1 consultation with Megha Kiran and get a personalized nutrition protocol built for your body.</p>
+
+        <div style="margin-bottom: 32px; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+          <a href="/contact.html" class="btn btn--primary" style="padding: 15px 34px; font-size: 1.02rem;">Book Your Consultation</a>
+          <span style="color: rgba(255, 249, 239, 0.75); font-size: 0.86rem; margin-top: 4px;">500+ Transformations · 10+ Countries</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 14px; margin-top: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.08); padding: 16px 10px; border-radius: var(--radius-sm); border: 1px solid rgba(255, 255, 255, 0.15);"><b style="display: block; font-size: 1.7rem; color: var(--golden-yellow); font-family: var(--font-display);">500+</b><span style="font-size: 0.8rem; color: var(--warm-ivory);">Clients Supported</span></div>
+          <div style="background: rgba(255, 255, 255, 0.08); padding: 16px 10px; border-radius: var(--radius-sm); border: 1px solid rgba(255, 255, 255, 0.15);"><b style="display: block; font-size: 1.7rem; color: var(--golden-yellow); font-family: var(--font-display);">10+</b><span style="font-size: 0.8rem; color: var(--warm-ivory);">Countries Served</span></div>
+          <div style="background: rgba(255, 255, 255, 0.08); padding: 16px 10px; border-radius: var(--radius-sm); border: 1px solid rgba(255, 255, 255, 0.15);"><b style="display: block; font-size: 1.7rem; color: var(--golden-yellow); font-family: var(--font-display);">4+ Years</b><span style="font-size: 0.8rem; color: var(--warm-ivory);">Clinical Practice</span></div>
+          <div style="background: rgba(255, 255, 255, 0.08); padding: 16px 10px; border-radius: var(--radius-sm); border: 1px solid rgba(255, 255, 255, 0.15);"><b style="display: block; font-size: 1.7rem; color: var(--golden-yellow); font-family: var(--font-display);">100%</b><span style="font-size: 0.8rem; color: var(--warm-ivory);">Personalized Plans</span></div>
+        </div>
       </div>
     </div>
   </section>

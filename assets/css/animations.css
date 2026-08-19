@@ -12,24 +12,48 @@
 /* Only active when JS is available (.js class added by inline script) */
 .js .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity .6s var(--ease), transform .6s var(--ease);
+  transform: translateY(20px);
+  transition:
+    opacity  0.6s var(--ease, cubic-bezier(.22,.61,.36,1)),
+    transform 0.6s var(--ease, cubic-bezier(.22,.61,.36,1));
 }
 .js .reveal[data-shown] {
   opacity: 1;
   transform: none;
 }
 
-/* Stagger children inside a reveal group */
-.js .reveal[data-shown] > * {
-  transition-delay: calc(var(--i, 0) * 60ms);
+/* ---- Stagger children inside a reveal group (cards, steps, list items) --- */
+.js .reveal[data-shown] > * { transition-delay: calc(var(--i, 0) * 55ms); }
+
+/* ---- Fade-only reveal (subtle text blocks, captions) --------------------- */
+.js .reveal-fade {
+  opacity: 0;
+  transition: opacity 0.6s var(--ease, cubic-bezier(.22,.61,.36,1));
+}
+.js .reveal-fade[data-shown] { opacity: 1; }
+
+/* ---- Image reveal (scale + fade) ---------------------------------------- */
+.js .reveal-img {
+  opacity: 0;
+  transform: scale(1.03);
+  transition:
+    opacity  0.8s var(--ease, cubic-bezier(.22,.61,.36,1)),
+    transform 0.8s var(--ease, cubic-bezier(.22,.61,.36,1));
+}
+.js .reveal-img[data-shown] {
+  opacity: 1;
+  transform: scale(1);
 }
 
-/* ---- Reduced motion override ---------------------------------------------- */
+/* ---- Reduced motion override --------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   .marquee__track { animation: none; transform: none; }
   .js .reveal,
-  .js .reveal[data-shown] {
+  .js .reveal[data-shown],
+  .js .reveal-fade,
+  .js .reveal-fade[data-shown],
+  .js .reveal-img,
+  .js .reveal-img[data-shown] {
     opacity: 1;
     transform: none;
     transition: none;

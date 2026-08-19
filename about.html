@@ -138,9 +138,6 @@
                   <li><a href="/programs/index.html#individuals">One-on-One Coaching</a></li>
                   <li><a href="/programs/index.html#individuals">Women's Health Program</a></li>
                   <li><a href="/programs/index.html#individuals">Child Nutrition Program</a></li>
-                  <li><a href="/programs/index.html#individuals">Preventive Care Program</a></li>
-                  <li><a href="/programs/index.html#individuals">Group &amp; Cohort Coaching</a></li>
-                  <li><a href="/programs/index.html#individuals">Membership Program</a></li>
                 </ul>
               </div>
               <div>
@@ -158,20 +155,17 @@
                 <ul>
                   <li><a href="/programs/index.html#specialist">Special Needs Nutrition</a></li>
                   <li><a href="/programs/index.html#specialist">Sports Nutrition</a></li>
-                  <li><a href="/resources/recipes.html">Healthy Recipe Library</a></li>
-                  <li><a href="/resources/courses.html">Nutrition Courses</a></li>
                 </ul>
               </div>
             </div>
             <div class="menu__foot">
               <p>Not sure which one fits?</p>
-              <a class="btn btn--ghost" href="/programs/index.html">See all 15 programs →</a>
+              <a class="btn btn--ghost" href="/programs/index.html">See all programs →</a>
             </div>
           </div>
         </li>
 
         <li><a href="/resources/recipes.html">Recipes</a></li>
-        <li><a href="/resources/courses.html">Courses</a></li>
         <li><a href="/about.html" aria-current="page">Why us</a></li>
         <li><a href="/testimonials.html">Testimonials</a></li>
         <li><a href="/contact.html" class="nav__link--contact">Book Consultation</a></li>
@@ -192,6 +186,9 @@
 
 <!-- ========== BOTTOM TAB BAR (Mobile only, fixed) ========== -->
 <nav class="bottom-tab-bar" id="bottom-tab-bar" aria-label="Main navigation">
+  <!-- Sliding active tab background indicator -->
+  <div class="tab-indicator" id="tab-indicator" aria-hidden="true"></div>
+
   <!-- Home -->
   <a class="tab-item" href="/index.html" data-tab-match="/" id="tab-home">
     <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -235,7 +232,7 @@
   </a>
 
   <!-- Why us -->
-  <a class="tab-item" href="/about.html" data-tab-match="/about.html" id="tab-whyus">
+  <a class="tab-item" href="/about.html" data-tab-match="/about.html" id="tab-whyus" aria-current="page">
     <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
     </svg>
@@ -432,23 +429,59 @@
      EXISTING SECTIONS (preserved exactly)
      ============================================================ -->
 
-<section class="section band-white">
+<section class="section band-white" id="about-megha">
 <div class="wrap">
-<div class="split">
-  <div><figure class="shot shot--tall reveal"><img src="/assets/images/megha-kiran.jpg" alt="Megha Kiran — Founder & Senior Clinical Nutritionist" class="shot__img"></figure></div>
+<div class="section-head reveal">
+  <p class="eyebrow">Meet the Founder</p>
+  <h2>About Megha</h2>
+</div>
+<div class="split" style="align-items: flex-start;">
+  <div>
+    <figure class="shot shot--tall reveal">
+      <img src="/assets/images/megha-kiran.jpg" alt="Megha Kiran — Founder & Senior Nutritionist" class="shot__img">
+    </figure>
+  </div>
   <div class="reveal">
-    <p class="eyebrow">Megha Kiran</p>
-    <h2>Founder and senior clinical nutritionist</h2>
-    <p class="lead">Megha holds an M.Sc. in Dietetics &amp; Applied Nutrition and specialises in child nutrition, women's hormonal health and preventive care. She has spent four years across three settings that rarely overlap: one-to-one clinical practice, community and corporate health, and nutrition education.</p>
-    <p>She is also a yoga instructor and a national-level swimmer. That matters less as a credential than as a bias — the plans she writes assume a body that has to train, travel, work late and eat with its family, because that is the body she has coached and the one she lives in.</p>
-    <ul class="path__list">
-      <li>M.Sc. Dietetics &amp; Applied Nutrition</li>
-      <li>Child nutrition specialist</li>
-      <li>Corporate wellness and healthcare consultant</li>
-      <li>Nutrition educator and community health speaker</li>
-      <li>Yoga instructor · national-level swimmer</li>
-    </ul>
-    <div class="btn-row mt4"><a class="btn btn--primary" href="/contact.html">Book a consultation with Megha</a></div>
+    <p class="eyebrow" style="letter-spacing: 0.08em; font-weight: 700; color: var(--dark-green);">MEGHA KIRAN</p>
+    <h2 style="margin-top: 4px; margin-bottom: 16px;">Founder &amp; Senior Nutritionist</h2>
+    
+    <p class="lead"><strong>I'm Megha Kiran, founder and senior nutritionist at NutriNest with Megha.</strong> Over the past 4+ years, I've had the privilege of helping people rebuild their relationship with food: <em>one habit, one week, one small win at a time.</em></p>
+    
+    <p>My path into nutrition began with a formal grounding in <strong>food, Nutrition &amp; Dietetics</strong>, and deepened through hands-on training across child nutrition, sports nutrition, and wellness. But what shaped my approach most wasn't the classroom – it was watching client after client follow a rigid diet chart for a few weeks, only to quietly slide back into old patterns the moment life got busy again.</p>
+    
+    <p>That's what led me to start NutriNest. Not to hand out one-size-fits-all meal plans, but to build something more honest: <strong>nutrition that adapts to your life</strong>, instead of asking you to reshape your life around it. Before we talk about food, we talk about you – your routine, your preferences, your challenges, and your goals. Because a plan that ignores who you are was never going to last.</p>
+
+    <div class="card card--flat" style="background: var(--warm-ivory); border-left: 5px solid var(--dark-green); padding: 24px 26px; border-radius: 16px; border: 1px solid var(--line); border-left-width: 5px; box-shadow: 0 4px 16px rgba(46, 66, 19, 0.05); margin-top: 24px; margin-bottom: 24px;">
+      <h3 style="margin-top:0; color:var(--dark-green); font-size:1.25rem; font-weight:800; margin-bottom: 14px;">My Philosophy</h3>
+      <ul style="margin-top: 10px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 10px; padding-left: 20px; list-style-type: disc;">
+        <li style="color: var(--dark-green); font-size: 1.02rem; font-weight: 500; line-height: 1.5;"><strong>Personalised nutrition</strong>, not generic charts</li>
+        <li style="color: var(--dark-green); font-size: 1.02rem; font-weight: 500; line-height: 1.5;"><strong>Practical habits</strong> that survive real life</li>
+        <li style="color: var(--dark-green); font-size: 1.02rem; font-weight: 500; line-height: 1.5;"><strong>Better food awareness</strong>, not fear of food</li>
+        <li style="color: var(--dark-green); font-size: 1.02rem; font-weight: 500; line-height: 1.5;"><strong>Sustainable results</strong>, not short-term fixes</li>
+      </ul>
+      <p style="margin-bottom:0; font-weight:700; color:var(--dark-green); font-size: 1.05rem; line-height: 1.55; border-top: 1px dashed rgba(46, 66, 19, 0.25); padding-top: 14px;">
+        I don't believe the goal is to follow a perfect diet forever. I believe the goal is to learn how to nourish yourself, for life.
+      </p>
+    </div>
+
+    <div class="callout" style="background: var(--dark-green); color: #FFFFFF; padding: 18px 24px; border-radius: 14px; box-shadow: 0 4px 14px rgba(46, 66, 19, 0.12); margin-bottom: 24px;">
+      <p style="margin: 0; font-weight: 700; color: #FFFFFF; font-size: 1.02rem; letter-spacing: 0.01em;">
+        NutriNest with Megha — <span style="font-weight: 500; color: var(--warm-ivory);">Personalised Nutrition. Sustainable Habits. Long-Term Health.</span>
+      </p>
+    </div>
+
+    <blockquote style="margin: 24px 0; padding: 20px 24px; background: #FFFFFF; border-left: 5px solid var(--dark-green); border-radius: 12px; border: 1px solid var(--line); border-left-width: 5px; box-shadow: 0 4px 16px rgba(46, 66, 19, 0.06);">
+      <p style="margin: 0; font-size: 1.08rem; color: var(--dark-green); font-weight: 600; line-height: 1.5;">
+        "The goal isn't to follow a perfect diet forever. The goal is to learn how to nourish yourself — for life."
+      </p>
+      <cite style="display: block; margin-top: 10px; font-size: 0.92rem; font-weight: 700; color: #506440; font-style: normal;">
+        — Megha Kiran, Founder, NutriNest with Megha
+      </cite>
+    </blockquote>
+
+    <div class="btn-row mt4">
+      <a class="btn btn--primary" href="/contact.html">Book a consultation with Megha</a>
+    </div>
   </div>
 </div>
 </div>
@@ -554,7 +587,6 @@
           <li><a href="/programs/womens-health.html">Women's Health</a></li>
           <li><a href="/programs/child-nutrition.html">Child Nutrition</a></li>
           <li><a href="/programs/preventive-care.html">Preventive Care</a></li>
-          <li><a href="/programs/group-coaching.html">Group &amp; Cohort Coaching</a></li>
           <li><a href="/programs/membership.html">Membership Program</a></li>
         </ul>
       </div>
@@ -578,7 +610,6 @@
         <h4>Resources</h4>
         <ul>
           <li><a href="/resources/recipes.html">Recipe Library</a></li>
-          <li><a href="/resources/courses.html">Courses</a></li>
           <li><a href="/about.html">About Megha</a></li>
           <li><a href="/contact.html">Book a consultation</a></li>
         </ul>
@@ -586,6 +617,7 @@
         <ul>
           <li><a href="/privacy.html">Privacy Policy</a></li>
           <li><a href="/terms.html">Terms of Service</a></li>
+          <li><a href="/terms.html#program-terms">Program Terms &amp; Protocol</a></li>
         </ul>
       </div>
     </div>
@@ -601,7 +633,7 @@
 </footer>
 
 <!-- Main JS (ES module) -->
-<script type="module" src="/assets/js/main.js"></script>
+<script type="module" src="/assets/js/main.js?v=12"></script>
 
 <!-- Dynamic footer year -->
 <script>

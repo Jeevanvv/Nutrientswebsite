@@ -11,22 +11,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- CSS: base system -->
-  <link rel="stylesheet" href="/assets/css/variables.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/reset.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/typography.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/layout.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/buttons.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/cards.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/navigation.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/hero.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/forms.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/accordion.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/tabs.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/carousel.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/pricing.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/footer.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/utilities.css?v=1.7">
-  <link rel="stylesheet" href="/assets/css/animations.css?v=1.7">
+  <link rel="stylesheet" href="/assets/css/variables.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/reset.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/typography.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/layout.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/buttons.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/cards.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/navigation.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/hero.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/forms.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/accordion.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/tabs.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/carousel.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/pricing.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/footer.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/utilities.css?v=1.8">
+  <link rel="stylesheet" href="/assets/css/animations.css?v=1.8">
     <script>document.documentElement.className += ' js';</script>
 </head>
 <body class="page-program">
@@ -47,97 +47,185 @@
     </div>
     <ul class="microcopy"><li>Nutrition data per portion, calculated — not estimated.</li><li>No life story. Just the recipe.</li><li>Free, forever.</li></ul>
   </div>
-</section><section class="section band-white">
+</section><section class="section band-white" id="recipes-section">
 <div class="wrap">
-<div class="section-head reveal" style="max-width:820px">
-  <p class="eyebrow">Free, and staying free</p>
-  <h2>Search the library</h2>
-  <p class="lead">Every recipe carries verified nutrition per stated portion and a short note on why it works for the condition it is tagged with.</p>
-</div>
+
+<!-- Section 1: Search Bar -->
 <div class="recipe-search reveal">
-  <label class="visually-hidden" for="recipes--recipe-search">Search recipes</label>
-  <input type="search" id="recipe-search" id="recipes--recipe-search" placeholder="Search — try “PCOS breakfast” or “paneer”" autocomplete="off">
+  <label class="visually-hidden" for="recipe-search">Search recipes</label>
+  <div class="recipe-search__bar">
+    <svg class="recipe-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+    <input type="search" id="recipe-search" placeholder="Search recipes (e.g. PCOS, breakfast, moong, paneer...)" autocomplete="off">
+    <button type="button" class="recipe-search__clear" aria-label="Clear search" hidden>&times;</button>
+  </div>
 </div>
-<div class="chips mt3 reveal" data-filter-group data-filter-target="#recipes--recipe-grid" data-filter-empty="#recipes--recipe-empty"><button class="chip chip--filter" data-value="all" aria-pressed="true">All recipes</button><button class="chip chip--filter" data-value="pcos" aria-pressed="false">PCOS</button><button class="chip chip--filter" data-value="diabetic" aria-pressed="false">Diabetic-friendly</button><button class="chip chip--filter" data-value="gut" aria-pressed="false">Gut health</button><button class="chip chip--filter" data-value="highprotein" aria-pressed="false">High protein</button><button class="chip chip--filter" data-value="heart" aria-pressed="false">Heart healthy</button><button class="chip chip--filter" data-value="breakfast" aria-pressed="false">Breakfast</button><button class="chip chip--filter" data-value="lunch" aria-pressed="false">Lunch</button><button class="chip chip--filter" data-value="dinner" aria-pressed="false">Dinner</button><button class="chip chip--filter" data-value="snack" aria-pressed="false">Snack</button><button class="chip chip--filter" data-value="vegan" aria-pressed="false">Vegan</button><button class="chip chip--filter" data-value="under15" aria-pressed="false">Under 15 min</button><button class="chip chip--filter" data-value="batch" aria-pressed="false">Batch friendly</button></div>
-<div class="recipe-grid mt5" id="recipe-grid" id="recipes--recipe-grid"><article class="recipe reveal" data-tags="breakfast pcos highprotein vegetarian under30 diabetic">
-  <div class="recipe__img" role="img" aria-label="Original photograph required: Moong dal chilla with mint chutney, shot to the library's single photography standard."></div>
-  <div class="recipe__body">
-    <h3>Moong dal chilla with mint chutney</h3>
-    <p>Ground soaked moong, spiced and cooked thin. Protein at breakfast is the single change that flattens most mid-morning crashes.</p>
-    <div class="recipe__meta"><span>Breakfast</span><span>High protein</span><span>PCOS</span></div>
-    <p class="recipe__nutri">18 g protein · 240 kcal · 6 g fibre per 2 chillas</p>
+
+<!-- Section 2: Row 1 — Meal-Type Category Pills -->
+<div class="rlib-scroll rlib-scroll--cats mt3 reveal" role="tablist" aria-label="Filter by meal type" data-rlib-group="cat">
+  <button type="button" class="rlib-pill rlib-pill--active" data-cat="all" role="tab" aria-selected="true">All Meals</button>
+  <button type="button" class="rlib-pill" data-cat="breakfast" role="tab">🌅 Breakfast</button>
+  <button type="button" class="rlib-pill" data-cat="lunch" role="tab">☀️ Lunch</button>
+  <button type="button" class="rlib-pill" data-cat="dinner" role="tab">🌙 Dinner</button>
+  <button type="button" class="rlib-pill" data-cat="snack" role="tab">🫐 Snack</button>
+</div>
+
+<!-- Section 3: Row 2 — Health-Condition Filter Chips -->
+<div class="rlib-scroll rlib-scroll--health mt2 reveal" role="group" aria-label="Filter by health need" data-rlib-group="health">
+  <button type="button" class="rlib-chip rlib-chip--active" data-health="all">All</button>
+  <button type="button" class="rlib-chip" data-health="pcos">PCOS</button>
+  <button type="button" class="rlib-chip" data-health="diabetic">Diabetic-friendly</button>
+  <button type="button" class="rlib-chip" data-health="gut">Gut health</button>
+  <button type="button" class="rlib-chip" data-health="highprotein">High protein</button>
+  <button type="button" class="rlib-chip" data-health="heart">Heart healthy</button>
+  <button type="button" class="rlib-chip" data-health="vegan">Vegan</button>
+  <button type="button" class="rlib-chip" data-health="under15">Under 15 min</button>
+  <button type="button" class="rlib-chip" data-health="batch">Batch friendly</button>
+</div>
+
+<!-- Section 4: Recipe Swipeable Carousel -->
+<div class="rlib-carousel-wrap mt4 reveal">
+  <div class="rlib-carousel" id="recipe-grid" aria-label="Recipe collection">
+    <div class="rlib-track" id="rlib-track">
+
+      <article class="rlib-card" data-tags="breakfast pcos highprotein vegetarian under30 diabetic">
+        <div class="rlib-card__image-container" data-color="breakfast">
+          <!-- Placeholder image container ready for real <img> tag -->
+          <span class="rlib-card__emoji" role="img" aria-label="Chilla">🫓</span>
+          <span class="rlib-card__time">⏱ 20 min</span>
+        </div>
+        <div class="rlib-card__body">
+          <h3 class="rlib-card__title">Moong dal chilla with mint chutney</h3>
+          <p class="rlib-card__summary">Ground soaked moong, spiced and cooked thin. Protein at breakfast flattens mid-morning energy crashes.</p>
+          <div class="rlib-card__tags"><span>Breakfast</span><span>High protein</span><span>PCOS</span></div>
+          <p class="rlib-card__nutri">18 g protein · 240 kcal · 6 g fibre per 2 chillas</p>
+        </div>
+      </article>
+
+      <article class="rlib-card" data-tags="lunch gut vegetarian under15 diabetic">
+        <div class="rlib-card__image-container" data-color="lunch">
+          <span class="rlib-card__emoji" role="img" aria-label="Curd rice">🍚</span>
+          <span class="rlib-card__time">⏱ 15 min</span>
+        </div>
+        <div class="rlib-card__body">
+          <h3 class="rlib-card__title">Curd rice with tempered vegetables</h3>
+          <p class="rlib-card__summary">Cooled rice, thick curd, light temper and grated vegetables. Gentle, familiar, and rich in prebiotic fibre.</p>
+          <div class="rlib-card__tags"><span>Lunch</span><span>Gut health</span><span>Under 15 min</span></div>
+          <p class="rlib-card__nutri">11 g protein · 320 kcal · 4 g fibre per bowl</p>
+        </div>
+      </article>
+
+      <article class="rlib-card" data-tags="breakfast diabetic highprotein vegetarian batch">
+        <div class="rlib-card__image-container" data-color="breakfast">
+          <span class="rlib-card__emoji" role="img" aria-label="Ragi Adai">🥞</span>
+          <span class="rlib-card__time">⏱ 25 min</span>
+        </div>
+        <div class="rlib-card__body">
+          <h3 class="rlib-card__title">Ragi and vegetable adai</h3>
+          <p class="rlib-card__summary">A thick lentil and ragi pancake. Digests slowly for steady glycemic control through to lunch.</p>
+          <div class="rlib-card__tags"><span>Breakfast</span><span>Diabetic-friendly</span><span>Batch</span></div>
+          <p class="rlib-card__nutri">16 g protein · 280 kcal · 7 g fibre per adai</p>
+        </div>
+      </article>
+
+      <article class="rlib-card" data-tags="dinner highprotein pcos vegetarian under30">
+        <div class="rlib-card__image-container" data-color="dinner">
+          <span class="rlib-card__emoji" role="img" aria-label="Paneer bhurji">🧀</span>
+          <span class="rlib-card__time">⏱ 15 min</span>
+        </div>
+        <div class="rlib-card__body">
+          <h3 class="rlib-card__title">Paneer bhurji with two rotis</h3>
+          <p class="rlib-card__summary">Crumbled paneer cooked with onion, tomato, and minimal oil. Assembles fast on busy weeknights.</p>
+          <div class="rlib-card__tags"><span>Dinner</span><span>High protein</span><span>PCOS</span></div>
+          <p class="rlib-card__nutri">26 g protein · 430 kcal · 5 g fibre per plate</p>
+        </div>
+      </article>
+
+      <article class="rlib-card" data-tags="snack highprotein vegan under15 heart">
+        <div class="rlib-card__image-container" data-color="snack">
+          <span class="rlib-card__emoji" role="img" aria-label="Sprouts sundal">🥗</span>
+          <span class="rlib-card__time">⏱ 10 min</span>
+        </div>
+        <div class="rlib-card__body">
+          <h3 class="rlib-card__title">Sprouts and cucumber sundal</h3>
+          <p class="rlib-card__summary">Steamed sprouts, cucumber, lemon, and a light temper. Replaces 5pm fried cravings naturally.</p>
+          <div class="rlib-card__tags"><span>Snack</span><span>Vegan</span><span>Under 15 min</span></div>
+          <p class="rlib-card__nutri">9 g protein · 150 kcal · 6 g fibre per bowl</p>
+        </div>
+      </article>
+
+      <article class="rlib-card" data-tags="dinner heart highprotein under30 nonveg">
+        <div class="rlib-card__image-container" data-color="dinner">
+          <span class="rlib-card__emoji" role="img" aria-label="Fish curry">🐟</span>
+          <span class="rlib-card__time">⏱ 25 min</span>
+        </div>
+        <div class="rlib-card__body">
+          <h3 class="rlib-card__title">Fish curry with brown rice</h3>
+          <p class="rlib-card__summary">Light coconut-tomato curry rich in turmeric and tamarind. Excellent source of heart-healthy omega-3 fats.</p>
+          <div class="rlib-card__tags"><span>Dinner</span><span>Heart healthy</span><span>High protein</span></div>
+          <p class="rlib-card__nutri">28 g protein · 460 kcal · 5 g fibre per serving</p>
+        </div>
+      </article>
+
+      <article class="rlib-card" data-tags="breakfast gut vegetarian under15 batch">
+        <div class="rlib-card__image-container" data-color="breakfast">
+          <span class="rlib-card__emoji" role="img" aria-label="Overnight oats">🥣</span>
+          <span class="rlib-card__time">⏱ 5 min prep</span>
+        </div>
+        <div class="rlib-card__body">
+          <h3 class="rlib-card__title">Overnight oats with curd and seeds</h3>
+          <p class="rlib-card__summary">Rolled oats, curd, chia and fruit prepared the night before. Effortless nutrition for hectic mornings.</p>
+          <div class="rlib-card__tags"><span>Breakfast</span><span>Gut health</span><span>Batch</span></div>
+          <p class="rlib-card__nutri">13 g protein · 310 kcal · 8 g fibre per jar</p>
+        </div>
+      </article>
+
+      <article class="rlib-card" data-tags="lunch family highprotein vegetarian batch">
+        <div class="rlib-card__image-container" data-color="lunch">
+          <span class="rlib-card__emoji" role="img" aria-label="Rajma wrap">🌯</span>
+          <span class="rlib-card__time">⏱ 20 min</span>
+        </div>
+        <div class="rlib-card__body">
+          <h3 class="rlib-card__title">Lunchbox: rajma wrap and fruit</h3>
+          <p class="rlib-card__summary">Mashed spiced rajma in a whole wheat roti wrap. Kid-approved, high fibre, and stays fresh for hours.</p>
+          <div class="rlib-card__tags"><span>Lunch</span><span>Family</span><span>High protein</span></div>
+          <p class="rlib-card__nutri">15 g protein · 380 kcal · 9 g fibre per wrap</p>
+        </div>
+      </article>
+
+      <article class="rlib-card" data-tags="breakfast diabetic vegan under30 heart">
+        <div class="rlib-card__image-container" data-color="breakfast">
+          <span class="rlib-card__emoji" role="img" aria-label="Millet upma">🍲</span>
+          <span class="rlib-card__time">⏱ 20 min</span>
+        </div>
+        <div class="rlib-card__body">
+          <h3 class="rlib-card__title">Millet upma with peanuts</h3>
+          <p class="rlib-card__summary">Foxtail millet cooked with vegetables and crunchy peanuts for protein and low-glycemic energy.</p>
+          <div class="rlib-card__tags"><span>Breakfast</span><span>Diabetic-friendly</span><span>Vegan</span></div>
+          <p class="rlib-card__nutri">10 g protein · 300 kcal · 6 g fibre per serving</p>
+        </div>
+      </article>
+
+    </div>
   </div>
-</article><article class="recipe reveal" data-tags="lunch gut vegetarian under15 diabetic">
-  <div class="recipe__img" role="img" aria-label="Original photograph required: Curd rice with tempered vegetables, shot to the library's single photography standard."></div>
-  <div class="recipe__body">
-    <h3>Curd rice with tempered vegetables</h3>
-    <p>Cooled rice, thick curd, a light temper and grated vegetables. Gentle, familiar and a genuinely good vehicle for fibre.</p>
-    <div class="recipe__meta"><span>Lunch</span><span>Gut health</span><span>Under 15 min</span></div>
-    <p class="recipe__nutri">11 g protein · 320 kcal · 4 g fibre per bowl</p>
+
+  <!-- Navigation arrows + progress dots -->
+  <div class="rlib-nav" aria-label="Carousel navigation">
+    <button type="button" class="rlib-nav__btn" id="rlib-prev" aria-label="Previous recipe">←</button>
+    <div class="rlib-dots" id="rlib-dots" aria-hidden="true"></div>
+    <button type="button" class="rlib-nav__btn" id="rlib-next" aria-label="Next recipe">→</button>
   </div>
-</article><article class="recipe reveal" data-tags="breakfast diabetic highprotein vegetarian batch">
-  <div class="recipe__img" role="img" aria-label="Original photograph required: Ragi and vegetable adai, shot to the library's single photography standard."></div>
-  <div class="recipe__body">
-    <h3>Ragi and vegetable adai</h3>
-    <p>A thicker dosa built on mixed dals and ragi. Slower to digest than a plain rice dosa, and it keeps you full to lunch.</p>
-    <div class="recipe__meta"><span>Breakfast</span><span>Diabetic-friendly</span></div>
-    <p class="recipe__nutri">16 g protein · 280 kcal · 7 g fibre per adai</p>
-  </div>
-</article><article class="recipe reveal" data-tags="dinner highprotein pcos vegetarian under30">
-  <div class="recipe__img" role="img" aria-label="Original photograph required: Paneer bhurji with two rotis, shot to the library's single photography standard."></div>
-  <div class="recipe__body">
-    <h3>Paneer bhurji with two rotis</h3>
-    <p>Crumbled paneer, onion, tomato, minimal oil. Assembles in fifteen minutes on a night when nothing else is going to happen.</p>
-    <div class="recipe__meta"><span>Dinner</span><span>High protein</span><span>PCOS</span></div>
-    <p class="recipe__nutri">26 g protein · 430 kcal · 5 g fibre per plate</p>
-  </div>
-</article><article class="recipe reveal" data-tags="snack highprotein vegan under15 heart">
-  <div class="recipe__img" role="img" aria-label="Original photograph required: Sprouts and cucumber sundal, shot to the library's single photography standard."></div>
-  <div class="recipe__body">
-    <h3>Sprouts and cucumber sundal</h3>
-    <p>Steamed sprouts, cucumber, lemon and a light temper. The snack that replaces the 5pm fried thing without feeling like a punishment.</p>
-    <div class="recipe__meta"><span>Snack</span><span>Vegan</span><span>Under 15 min</span></div>
-    <p class="recipe__nutri">9 g protein · 150 kcal · 6 g fibre per bowl</p>
-  </div>
-</article><article class="recipe reveal" data-tags="dinner heart highprotein under30 nonveg">
-  <div class="recipe__img" role="img" aria-label="Original photograph required: Fish curry with brown rice, shot to the library's single photography standard."></div>
-  <div class="recipe__body">
-    <h3>Fish curry with brown rice</h3>
-    <p>A light coconut-tomato curry, low oil, generous on turmeric and tamarind. Serve over brown or mixed rice.</p>
-    <div class="recipe__meta"><span>Dinner</span><span>Heart healthy</span></div>
-    <p class="recipe__nutri">28 g protein · 460 kcal · 5 g fibre per serving</p>
-  </div>
-</article><article class="recipe reveal" data-tags="breakfast gut vegetarian under15 batch">
-  <div class="recipe__img" role="img" aria-label="Original photograph required: Overnight oats with curd and seeds, shot to the library's single photography standard."></div>
-  <div class="recipe__body">
-    <h3>Overnight oats with curd and seeds</h3>
-    <p>Rolled oats, curd, chia and fruit, assembled the night before. Made for mornings that start badly.</p>
-    <div class="recipe__meta"><span>Breakfast</span><span>Gut health</span><span>Batch friendly</span></div>
-    <p class="recipe__nutri">13 g protein · 310 kcal · 8 g fibre per jar</p>
-  </div>
-</article><article class="recipe reveal" data-tags="lunch family highprotein vegetarian batch">
-  <div class="recipe__img" role="img" aria-label="Original photograph required: Lunchbox: rajma wrap and fruit, shot to the library's single photography standard."></div>
-  <div class="recipe__body">
-    <h3>Lunchbox: rajma wrap and fruit</h3>
-    <p>Mashed spiced rajma in a whole wheat roti, rolled tight so it survives a schoolbag. Fruit packed separately.</p>
-    <div class="recipe__meta"><span>Lunchbox</span><span>Family</span></div>
-    <p class="recipe__nutri">15 g protein · 380 kcal · 9 g fibre per wrap</p>
-  </div>
-</article><article class="recipe reveal" data-tags="breakfast diabetic vegan under30 heart">
-  <div class="recipe__img" role="img" aria-label="Original photograph required: Millet upma with peanuts, shot to the library's single photography standard."></div>
-  <div class="recipe__body">
-    <h3>Millet upma with peanuts</h3>
-    <p>Foxtail millet cooked like upma, heavy on vegetables, peanuts for protein and texture.</p>
-    <div class="recipe__meta"><span>Breakfast</span><span>Diabetic-friendly</span><span>Vegan</span></div>
-    <p class="recipe__nutri">10 g protein · 300 kcal · 6 g fibre per serving</p>
-  </div>
-</article></div>
-<p class="empty-state reveal" id="recipe-empty" id="recipes--recipe-empty" hidden>Nothing matches that yet. Try a different filter, or request the recipe — requests drive what gets written next.</p>
-<p class="form-note mt3 reveal">Sample entries. Nutrition values must be calculated and verified, and every recipe needs an original photograph shot to one consistent standard, before this library goes live.</p>
+</div>
+
+<p class="empty-state reveal" id="recipe-empty" hidden>No recipes match that filter combination. Try selecting a different category or clearing search!</p>
+<p class="form-note mt4 reveal">Sample entries. Nutrition values are calculated per verified portion size.</p>
 </div>
 </section>
 <section class="section band-white">
 <div class="wrap">
+
 <div class="split">
   <div class="reveal">
     <p class="eyebrow">What this is</p>

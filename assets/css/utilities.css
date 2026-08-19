@@ -14,10 +14,102 @@
   background: var(--white);
   border: 1px solid var(--dark-green-20);
   font-size: .9rem; color: var(--ink);
+  transition: background-color .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease), transform .2s var(--ease);
 }
+.chip:hover { border-color: var(--dark-green); transform: translateY(-1px); }
 .band-dark .chip { background: rgba(255, 249, 239, .08); border-color: var(--line-dark); color: var(--warm-ivory); }
 .chip--filter { cursor: pointer; font-family: var(--font-body); }
-.chip--filter[aria-pressed="true"] { background: var(--dark-green); color: var(--warm-ivory); border-color: var(--dark-green); }
+.chip--filter[aria-pressed="true"] { background: var(--dark-green); color: var(--warm-ivory); border-color: var(--dark-green); font-weight: 600; box-shadow: 0 4px 12px rgba(46, 66, 19, .2); }
+
+/* ---- Recipe Search Input Bar --------------------------------------------- */
+.recipe-search {
+  max-width: 680px;
+  margin-bottom: var(--s3);
+}
+.recipe-search__bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-pill);
+  padding: 4px 18px 4px 16px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color .25s var(--ease), box-shadow .25s var(--ease);
+}
+.recipe-search__bar:focus-within {
+  border-color: var(--dark-green);
+  box-shadow: 0 6px 20px rgba(46, 66, 19, .12);
+}
+.recipe-search__icon {
+  width: 20px;
+  height: 20px;
+  color: var(--leaf-ink);
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+.recipe-search input[type="search"] {
+  flex: 1;
+  border: none !important;
+  background: transparent !important;
+  padding: 12px 0 !important;
+  font-family: var(--font-body);
+  font-size: .98rem;
+  color: var(--ink);
+  outline: none !important;
+  box-shadow: none !important;
+}
+.recipe-search input[type="search"]::placeholder {
+  color: var(--ink-muted);
+  opacity: .8;
+}
+.recipe-search__clear {
+  background: var(--leaf-20);
+  border: none;
+  color: var(--dark-green);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: background .2s var(--ease);
+}
+.recipe-search__clear:hover {
+  background: var(--dark-green);
+  color: var(--warm-ivory);
+}
+
+/* ---- Recipe Card Badges & Meta ------------------------------------------ */
+.recipe__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 10px 0;
+}
+.recipe__meta span {
+  display: inline-flex;
+  align-items: center;
+  font-size: .78rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--leaf-20);
+  color: var(--leaf-ink);
+  letter-spacing: .02em;
+}
+.recipe__nutri {
+  font-size: .86rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
 
 /* ---- Related programs grid ---------------------------------------------- */
 .related { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -93,12 +185,29 @@
 .marquee:hover .marquee__track { animation-play-state: paused; }
 .logo-slot {
   flex: none; width: 168px; height: 72px; border-radius: var(--radius-sm);
-  border: 1px dashed var(--dark-green-20); background: var(--white);
-  display: grid; place-items: center; text-align: center; padding: 8px;
-  font-family: var(--font-display); font-size: .68rem; letter-spacing: .14em;
-  text-transform: uppercase; color: var(--ink-muted);
+  border: 1px solid var(--line); background: var(--white);
+  display: grid; place-items: center; text-align: center; padding: 12px 18px;
+  box-shadow: 0 2px 8px rgba(46, 66, 19, 0.04);
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease);
 }
-.band-dark .logo-slot { background: rgba(255, 249, 239, .07); border-color: var(--line-dark); color: rgba(255, 249, 239, .72); }
+.logo-slot:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(46, 66, 19, 0.10);
+}
+.logo-slot img {
+  max-width: 100%;
+  max-height: 46px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(30%) opacity(0.9);
+  transition: filter .2s var(--ease), transform .2s var(--ease);
+}
+.logo-slot:hover img {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.04);
+}
+.band-dark .logo-slot { background: var(--white); border-color: rgba(255, 255, 255, 0.2); }
 .marquee-label {
   text-align: center;
   font-family: var(--font-display); font-weight: 700; font-size: .74rem;
@@ -399,5 +508,362 @@ body.video-modal-open {
     align-items: center;
     justify-content: center;
     text-align: center;
+  }
+}
+
+/* =============================================================================
+   RECIPE LIBRARY — Premium Mobile-First Browsing (rlib)
+   Modular Components: pill row · health chip row · full-bleed carousel · card · dots
+   ============================================================================= */
+
+/* ---- Shared: horizontal scrolling pill/chip row -------------------------- */
+.rlib-scroll {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 4px;
+}
+.rlib-scroll::-webkit-scrollbar { display: none; }
+
+/* ---- Row 1: Meal-type category pills ------------------------------------- */
+.rlib-pill {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 42px;
+  padding: 0 20px;
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  border: 1.5px solid var(--line);
+  font-family: var(--font-body);
+  font-size: .9rem;
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background-color 200ms var(--ease),
+    color            200ms var(--ease),
+    border-color     200ms var(--ease),
+    transform        180ms var(--ease-spring),
+    box-shadow       200ms var(--ease);
+}
+.rlib-pill:hover {
+  border-color: var(--dark-green);
+  transform: translateY(-1px);
+}
+.rlib-pill:active {
+  transform: scale(0.96);
+  transition-duration: 80ms;
+}
+.rlib-pill--active {
+  background: var(--dark-green);
+  color: var(--warm-ivory);
+  border-color: var(--dark-green);
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(46, 66, 19, .22);
+}
+
+/* ---- Row 2: Health-condition filter chips --------------------------------- */
+.rlib-chip {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 16px;
+  border-radius: var(--radius-pill);
+  background: var(--ivory-soft);
+  border: 1px solid var(--line);
+  font-family: var(--font-body);
+  font-size: .82rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background-color 180ms var(--ease),
+    color            180ms var(--ease),
+    border-color     180ms var(--ease),
+    transform        160ms var(--ease-spring);
+}
+.rlib-chip:hover {
+  border-color: var(--leaf-ink);
+  color: var(--leaf-ink);
+}
+.rlib-chip:active { transform: scale(0.95); transition-duration: 60ms; }
+.rlib-chip--active {
+  background: var(--leaf-20);
+  color: var(--leaf-ink);
+  border-color: var(--dark-green-40);
+  font-weight: 700;
+}
+
+/* ---- Carousel outer wrapper (full-bleed breakout) ------------------------ */
+.rlib-carousel-wrap {
+  margin-inline: calc(-1 * var(--gutter));
+  overflow: hidden;
+}
+
+/* ---- Scrollable track ---------------------------------------------------- */
+.rlib-track {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 8px var(--gutter) 16px var(--gutter);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.rlib-track::-webkit-scrollbar { display: none; }
+
+/* ---- Individual Recipe Card ---------------------------------------------- */
+.rlib-card {
+  flex: none;
+  width: min(82%, 420px);
+  scroll-snap-align: start;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition:
+    box-shadow    280ms var(--ease),
+    border-color  280ms var(--ease),
+    transform     280ms var(--ease);
+  cursor: pointer;
+}
+.rlib-card:hover {
+  box-shadow: var(--shadow-lift);
+  border-color: var(--dark-green-40);
+  transform: translateY(-2px);
+}
+.rlib-card:active {
+  transform: scale(0.98);
+  transition-duration: 80ms;
+}
+.rlib-card[data-hidden] { display: none !important; }
+
+/* ---- Image Container (supports real <img> or gradient placeholder) ------- */
+.rlib-card__image-container {
+  position: relative;
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: var(--leaf-20);
+}
+/* Optional real image inside placeholder container */
+.rlib-card__image-container img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Gradient presets for placeholder mode */
+.rlib-card__image-container[data-color="breakfast"] {
+  background: linear-gradient(145deg, #FDE9C4 0%, #F5D08A 50%, #E4C46B 100%);
+}
+.rlib-card__image-container[data-color="lunch"] {
+  background: linear-gradient(145deg, #DCF0C0 0%, #B5DC78 50%, #8BC53D 100%);
+}
+.rlib-card__image-container[data-color="dinner"] {
+  background: linear-gradient(145deg, #C4D9E8 0%, #7BAAC8 50%, #4A7A9B 100%);
+}
+.rlib-card__image-container[data-color="snack"] {
+  background: linear-gradient(145deg, #F5E6D4 0%, #E8C99A 50%, #D4A76A 100%);
+}
+.rlib-card__image-container[data-color="default"],
+.rlib-card__image-container:not([data-color]) {
+  background: linear-gradient(145deg, var(--leaf-20) 0%, var(--ivory-deep) 50%, var(--dark-green-20) 100%);
+}
+.rlib-card__image-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 30% 70%, rgba(255,255,255,.2) 0%, transparent 60%),
+                    radial-gradient(circle at 80% 20%, rgba(255,255,255,.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Food visual icon/emoji placeholder */
+.rlib-card__emoji {
+  font-size: 76px;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,.12));
+  user-select: none;
+  animation: rlib-breathe 4s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .rlib-card__emoji { animation: none; }
+}
+@keyframes rlib-breathe {
+  0%, 100% { transform: scale(1)     translateY(0); }
+  50%       { transform: scale(1.03) translateY(-3px); }
+}
+
+/* Cooking time badge overlay */
+.rlib-card__time {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  background: rgba(30, 42, 20, .82);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: var(--warm-ivory);
+  font-size: .76rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  letter-spacing: .02em;
+}
+
+/* ---- Card Body ----------------------------------------------------------- */
+.rlib-card__body {
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+.rlib-card__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.08rem;
+  color: var(--dark-green);
+  line-height: 1.35;
+}
+.rlib-card__summary {
+  font-size: .88rem;
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.48;
+}
+.rlib-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.rlib-card__tags span {
+  display: inline-flex;
+  align-items: center;
+  font-size: .74rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--leaf-20);
+  color: var(--leaf-ink);
+  letter-spacing: .01em;
+}
+.rlib-card__nutri {
+  font-size: .83rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+/* ---- Navigation Controls (Arrows + Dots) --------------------------------- */
+.rlib-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 4px var(--gutter) 0;
+}
+.rlib-nav__btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line);
+  background: var(--white);
+  color: var(--dark-green);
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition:
+    background-color 180ms var(--ease),
+    border-color     180ms var(--ease),
+    color            180ms var(--ease),
+    transform        160ms var(--ease-spring),
+    box-shadow       180ms var(--ease);
+  flex-shrink: 0;
+}
+.rlib-nav__btn:hover:not(:disabled) {
+  background: var(--dark-green);
+  color: var(--warm-ivory);
+  border-color: var(--dark-green);
+  box-shadow: 0 6px 18px rgba(46, 66, 19, .22);
+  transform: scale(1.06);
+}
+.rlib-nav__btn:active:not(:disabled) { transform: scale(0.94); transition-duration: 60ms; }
+.rlib-nav__btn:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Scroll position dots indicator */
+.rlib-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.rlib-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: var(--dark-green-20);
+  transition: width 280ms var(--ease), background-color 280ms var(--ease);
+  flex-shrink: 0;
+}
+.rlib-dot.is-active {
+  width: 20px;
+  background: var(--dark-green);
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .rlib-card { width: min(86%, 340px); }
+  .rlib-card__image-container { height: 165px; }
+  .rlib-card__emoji { font-size: 64px; }
+  .rlib-card__title { font-size: 1rem; }
+}
+@media (min-width: 768px) {
+  .rlib-card { width: min(55%, 460px); }
+  .rlib-nav__btn { width: 48px; height: 48px; }
+}
+@media (min-width: 1024px) {
+  .rlib-card { width: min(40%, 500px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rlib-pill, .rlib-chip, .rlib-card, .rlib-nav__btn, .rlib-dot {
+    transition: none;
   }
 }

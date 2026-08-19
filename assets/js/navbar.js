@@ -16,6 +16,14 @@ export function initNavbar() {
   const nav      = qs('#site-nav');
   const backdrop = qs('#drawer-backdrop');
   const closeBtn = qs('#drawer-close');
+  const header   = qs('.site-header');
+
+  /* ---- Scroll shadow: add .is-scrolled when past 40px ------------------- */
+  if (header) {
+    const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 40);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // set correct class on initial load if already scrolled
+  }
 
   const iconMenu  = toggle ? qs('.icon-menu', toggle) : null;
   const iconClose = toggle ? qs('.icon-close', toggle) : null;
@@ -132,50 +140,73 @@ export function initNavbar() {
     });
   }
 
-  /* ---- Bottom Tab Bar Active Highlighting ------------------------------- */
-  setActiveTab(window.location.pathname);
+  /* ---- Bottom Tab Bar Active Highlighting & Sliding Indicator ------------ */
+  const updateTabs = () => setActiveTab(window.location.pathname, window.location.hash);
+  updateTabs();
+  window.addEventListener('hashchange', updateTabs);
+  window.addEventListener('popstate', updateTabs);
+
+  // Click handler for instant smooth tab slide & navigation
+  qsa('.tab-item').forEach(tab => {
+    on(tab, 'click', () => {
+      const href = tab.getAttribute('href') || '';
+      if (href.includes('#')) {
+        const hash = href.substring(href.indexOf('#'));
+        setActiveTab(window.location.pathname, hash);
+      } else {
+        setActiveTab(href, '');
+      }
+    });
+  });
 }
 
-function setActiveTab(path) {
+export function setActiveTab(path = window.location.pathname, hash = window.location.hash) {
   const tabs = qsa('.tab-item');
+  const indicator = qs('#tab-indicator');
   if (!tabs.length) return;
 
-  const normPath = (path === '/index.html' || path === '/') ? '/' : path;
-  let matched = false;
+  const p = (path || '').toLowerCase();
+  const h = (hash || '').toLowerCase();
 
-  tabs.forEach(tab => {
-    const matchVal = tab.dataset.tabMatch || '';
-    tab.removeAttribute('aria-current');
+  // Strict priority ordering — first match wins, no double-matching
+  let activeIndex = 0; // default: Home
 
-    if (matched) return;
-    if (matchVal.startsWith('__')) return;
+  if (h === '#corporates' ||
+      p.includes('/corporate.html') ||
+      p.includes('/programs/corporate') ||
+      p.includes('/programs/b2b') ||
+      p.includes('/programs/institution') ||
+      p.includes('/programs/community-wellness') ||
+      p.includes('/programs/ngo')) {
+    activeIndex = 2; // Corporates
+  } else if (h === '#individuals' ||
+      p.includes('/programs/one-on-one') ||
+      p.includes('/programs/womens') ||
+      p.includes('/programs/child') ||
+      p.includes('/programs/preventive') ||
+      p.includes('/programs/group') ||
+      p.includes('/programs/membership') ||
+      p.includes('/programs/sports') ||
+      p.includes('/programs/special') ||
+      (p.includes('/programs/') && !h.includes('corporate'))) {
+    activeIndex = 1; // Individuals (programs/ catch-all, only if not corporate)
+  } else if (p.includes('/about.html') || p.includes('/testimonials')) {
+    activeIndex = 4; // Why us
+  } else if (p.includes('/resources/')) {
+    activeIndex = 3; // Resources
+  }
+  // else activeIndex stays 0 (Home)
 
-    if (matchVal === '/') {
-      if (normPath === '/') {
-        tab.setAttribute('aria-current', 'page');
-        matched = true;
-      }
-    } else if (normPath === matchVal || normPath.startsWith(matchVal)) {
-      tab.setAttribute('aria-current', 'page');
-      matched = true;
-    }
-  });
-
-  if (!matched || window.location.hash === '#corporates') {
-    const corporatesTab = qs('#tab-corporates');
-    if (corporatesTab && window.location.hash === '#corporates') {
-      tabs.forEach(t => t.removeAttribute('aria-current'));
-      corporatesTab.setAttribute('aria-current', 'page');
-    }
+  // Clear all active states, set exactly one
+  tabs.forEach(tab => tab.removeAttribute('aria-current'));
+  if (tabs[activeIndex]) {
+    tabs[activeIndex].setAttribute('aria-current', 'page');
   }
 
-  const individualsTab = qs('#tab-individuals');
-  if (
-    individualsTab &&
-    normPath.startsWith('/programs/') &&
-    window.location.hash === '#individuals'
-  ) {
-    tabs.forEach(t => t.removeAttribute('aria-current'));
-    individualsTab.setAttribute('aria-current', 'page');
+  // Slide dark green pill indicator — fixed position, no flickering
+  if (indicator && tabs[activeIndex]) {
+    indicator.style.opacity = '1';
+    indicator.style.transform = `translateX(${activeIndex * 100}%)`;
   }
 }
+

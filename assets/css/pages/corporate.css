@@ -48,13 +48,13 @@
 .stat span { font-size: .78rem; color: var(--ink-muted); font-weight: 400; }
 
 /* ---------- PHILOSOPHY ---------- */
-.philosophy { padding: 90px 0 70px; text-align: center; }
+.philosophy { padding: 12px 0 24px; text-align: center; }
 .philosophy h2 {
-  font-size: clamp(1.5rem, 3vw, 2.15rem); font-weight: 600; line-height: 1.35;
+  font-size: clamp(1.4rem, 2.8vw, 1.95rem); font-weight: 600; line-height: 1.35;
   max-width: 840px; margin: 0 auto; letter-spacing: -.02em;
 }
 .philosophy h2 mark { background: linear-gradient(transparent 62%, rgba(139,197,61,.45) 62%); color: var(--ink); padding: 0 4px; }
-.philosophy p { max-width: 640px; margin: 22px auto 0; color: var(--ink-soft); font-size: .96rem; font-weight: 300; }
+.philosophy p { max-width: 640px; margin: 12px auto 0; color: var(--ink-soft); font-size: .94rem; font-weight: 300; }
 
 /* ---------- SECTION HEADERS ---------- */
 .sec-head { margin-bottom: 48px; text-align: center; }

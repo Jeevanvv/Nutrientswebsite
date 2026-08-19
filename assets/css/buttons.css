@@ -94,6 +94,10 @@
   color: var(--dark-green);
   transform: translateY(-2px);
 }
+.btn--primary:active {
+  transform: scale(0.97) translateY(0);
+  transition-duration: 100ms;
+}
 
 /* ---- Ghost (outlined) ---------------------------------------------------- */
 .btn--ghost {
@@ -106,6 +110,10 @@
   background: var(--dark-green);
   color: var(--warm-ivory);
   transform: translateY(-2px);
+}
+.btn--ghost:active {
+  transform: scale(0.97) translateY(0);
+  transition-duration: 100ms;
 }
 .btn--ghost:hover::after {
   background: linear-gradient(
